@@ -16,9 +16,14 @@ export default {
 
 <style scoped>
 
+  .schedules {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
   .schedule {
     border-radius: 15px;
     box-shadow: -2px 2px 10px 2px #f2f2f2;
-    padding: 2.5rem;
+    padding: 2rem;
   }
 </style>

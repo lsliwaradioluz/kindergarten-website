@@ -1,7 +1,7 @@
 <template>
   <div class="prices main">
     <h1 class="prices-header header-primary">Cennik</h1>
-    <div class="price">
+    <div class="price box">
       <div class="icon b-pink">
         85zł
       </div>
@@ -23,6 +23,11 @@ export default {
 
 <style scoped>
 
+  .prices {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
   .prices-header {
     margin-top: 0;
   }
@@ -34,7 +39,8 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 
   .icon {
@@ -42,7 +48,6 @@ export default {
     font-family: 'Balo', cursive;
     font-weight: 700;
     font-size: 1.5rem;
-
   }
 
   .price__header {
