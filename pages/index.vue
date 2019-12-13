@@ -1,72 +1,48 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        frontend
-      </h1>
-      <h2 class="subtitle">
-        Kindergarten website Katarzyna Osmałek
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+  <div>
+    <Landing />
+    <About />
+    <Events />
+    <Schedules />
+    <Gallery :images="images" />
+    <Teachers />
+    <Prices />
+    <Opinions />
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import Landing from '~/components/main/Landing.vue'
+import About from '~/components/main/About.vue'
+import Events from '~/components/main/Events.vue'
+import Schedules from '~/components/main/Schedules.vue'
+import Gallery from '~/components/main/Gallery.vue'
+import Teachers from '~/components/main/Teachers.vue'
+import Prices from '~/components/main/Prices.vue'
+import Opinions from '~/components/main/Opinions.vue'
+
+import mainQuery from '~/apollo/queries/main/mainQuery.gql'
 
 export default {
   components: {
-    Logo
-  }
+    Landing,
+    About,
+    Events, 
+    Schedules,
+    Gallery,
+    Teachers,
+    Prices,
+    Opinions,
+  },
+  asyncData(context) {
+    let client = context.app.apolloProvider.defaultClient;
+    return client.query({ query: mainQuery })
+      .then(({ data }) => {
+        const slicedImages = data.galleries[0].image.slice(0, 6);
+        return {
+          images: slicedImages
+        }
+      });
+  },
 }
 </script>
-
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>

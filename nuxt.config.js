@@ -1,3 +1,5 @@
+import webpack from 'webpack'
+require('dotenv').config()
 
 export default {
   mode: 'universal',
@@ -23,6 +25,9 @@ export default {
   ** Global CSS
   */
   css: [
+    '~/assets/styles/general.css',
+    '~/assets/styles/colors.css',
+    '~/assets/icons/primary/flaticon.css',
   ],
   /*
   ** Plugins to load before mounting the App
@@ -38,7 +43,16 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/apollo',
+    ['@nuxtjs/dotenv', { systemvars: true }],
   ],
+  apollo: {  
+    clientConfigs: {
+      default: {
+        httpEndpoint: process.env.GRAPHQL_URL
+      }
+    }
+  },
   /*
   ** Build configuration
   */
@@ -46,6 +60,11 @@ export default {
     /*
     ** You can extend webpack config here
     */
+   plugins: [
+    new webpack.ProvidePlugin({
+      '_': 'lodash'
+    })
+    ],
     extend (config, ctx) {
     }
   }

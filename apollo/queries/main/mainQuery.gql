@@ -1,0 +1,10 @@
+query mainQuery {
+  galleries {
+    id
+    name
+    image {
+      url
+      id
+    }
+  }
+}
