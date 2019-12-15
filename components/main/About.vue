@@ -8,10 +8,10 @@
             <i class="flaticon-shield"></i>
           </div>
           <h2 class="header-secondary">
-            Bezpieczeństwo
+            Spokojny start
           </h2>
           <p class="text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Wiedząc jak ważne dla harmonijnego rozwoju dziecka jest jego poczucie bezpieczeństwa, proponujemy rodzicom stopniowe wprowadzanie maluszka w świat żłobkowy w miarę możliwości czasowych rodziców.
           </p>
         </div>
         <div class="about__facilities-tab box">
@@ -22,7 +22,7 @@
             Wychowawcy
           </h2>
           <p class="text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            W żłobku „A Kuku” nie pracują „panie”, „wychowawczynie” czy „nauczycielki”. Tutaj Waszym dzieckiem opiekują się po prostu ciocie. Chcemy, aby dzieci czuły się w naszym żłobku radośnie, bezpiecznie oraz z uśmiechem na twarzy przekraczało próg naszej placówki. 
           </p>
         </div>
         <div class="about__facilities-tab box">
@@ -33,19 +33,19 @@
             Aktywności
           </h2>
           <p class="text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Wspieramy indywidualny rozwój wszystkich dzieci. Nasz plan tygodniowy jest wypełniony zajęciami tematycznymi, a nasz żłobek często odwiedzają ciekawi goście zajmujący się cie dziedzinami życia.  
           </p>
         </div>
       </div>
     </div>
     <div class="about__details box">
       <div>
-        <h1 class="about__details-header header-primary">O nas</h1>
-        <p class="about__details-text text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+        <h1 class="about__details-header header-primary">Zapisy</h1>
+        <p class="about__details-text text">Do żłobka Akuku dzieci przyjmowane są przez cały rok, w zależności od wolnych miejsc. Aby ułatwić proces rezerwacji miejsca, osoby zainteresowane prosimy o:</p>
         <ul>
-          <li class="text"><span class="c-pink">✔ </span>Lorem ipsum dolor sit amet</li>
-          <li class="text"><span class="c-green">✔ </span>Ut enim ad minim veniam,</li>
-          <li class="text"><span class="c-yellow">✔ </span>Duis aute irure dolor in reprehenderit in voluptate</li>
+          <li class="text"><span class="c-pink">✔ </span>Wypełnienie formularza zgłoszeniowego, będącego gwarancją rezerwacji miejsca</li>
+          <li class="text"><span class="c-green">✔ </span>Odesłanie go na adres mailowy</li>
+          <li class="text"><span class="c-yellow">✔ </span>Uiszczenie opłaty wpisowej w wysokości 39 złotych</li>
         </ul>
       </div>
       <div class="about__details-image">

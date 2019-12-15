@@ -1,23 +1,22 @@
 <template>
   <div class="prices main">
-    <h1 class="prices-header header-primary">Cennik</h1>
-    <div class="price box">
-      <div class="icon b-pink">
-        85zł
+    <h1 class="prices__header header-primary">Cennik</h1>
+    <div class="prices__container">
+      <div class="price box" v-for="price in prices" :key="price.id">
+      <div class="icon">
+        {{ price.price }}
       </div>
-      <h2 class="price__header header-secondary">Pobyt do 8 godzin</h2>
-      <p class="price__text text">Przewijanie</p>
-      <p class="price__text text">Drzemka</p>
-      <p class="price__text text">Zabawy grupowe</p>
-      <p class="price__text text">Czytanie bajek</p>
-      <button class="price__button button-yellow b-pink">Zapisz się</button>
+      <h2 class="price__header header-secondary">{{ price.name }}</h2>
+      <p class="price__text text" v-for="entry in price.entries" :key="entry.id">{{ entry.entry }}</p>
+      <button class="price__button button-yellow">Zapisz się</button>
+    </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  
+  props: ['prices']
 }
 </script>
 
@@ -28,7 +27,7 @@ export default {
     padding-right: 2rem;
   }
 
-  .prices-header {
+  .prices__header {
     margin-top: 0;
   }
 
@@ -39,8 +38,8 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding: 4rem 3rem;
+    margin-bottom: 2rem;
   }
 
   .icon {
@@ -64,4 +63,20 @@ export default {
     font-size: 0.9rem;
     padding: 1rem 1rem;
   }
+
+  .price:nth-child(1) .icon,
+  .price:nth-child(1) .price__button {
+    background-color: #FA67BF;
+  }
+
+  .price:nth-child(2) .icon,
+  .price:nth-child(2) .price__button {
+    background-color: #E21C3F;
+  }
+
+  .price:nth-child(3) .icon,
+  .price:nth-child(3) .price__button {
+    background-color: #19AA5F;
+  }
+
 </style>

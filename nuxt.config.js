@@ -27,6 +27,7 @@ export default {
   css: [
     '~/assets/styles/general.css',
     '~/assets/styles/colors.css',
+    '~/assets/styles/animations.css',
     '~/assets/icons/primary/flaticon.css',
   ],
   /*

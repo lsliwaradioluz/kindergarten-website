@@ -7,4 +7,31 @@ query mainQuery {
       id
     }
   }
+  schedules {
+    id
+    day 
+    description
+  }
+  teachers {
+    id
+    name
+    caption
+    image {
+      url
+    }
+  }
+  prices {
+    id
+    price
+    name
+    entries {
+      id
+      entry
+    }
+  }
+  facilities {
+    id
+    entry
+    caption
+  }
 }

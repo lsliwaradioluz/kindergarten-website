@@ -2,10 +2,10 @@
   <div class="landing main">
     <div class="landing__content">
       <div class="landing__content-header">
-        <h1 class="header-primary">Odkryj nowe oblicze opieki</h1>
+        <h1 class="header-primary">Dobro maluszka na pierwszym miejscu</h1>
       </div>
       <div class="landing__content-text">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>W żłobku Akuku dbamy o harmonijmy rozwój dzieci. Chcemy, by z nami czuły się szczęsliwe i bezpieczne!</p>
       </div>
       <div class="landing__content-buttons">
         <button class="landing__content-button button-yellow">Zadzwoń</button>
@@ -25,12 +25,13 @@
 
   .landing {
     height: 100vh;
+    padding-top: 5rem;
     background-image: url('~assets/images/background-blue.png');
     background-size: cover;
     background-position: bottom center;
     color: white;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .header-primary {

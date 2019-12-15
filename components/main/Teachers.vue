@@ -3,11 +3,11 @@
     <h1 class="teachers-header header-primary">
       Poznaj naszych nauczycieli
     </h1>
-    <div class="teacher box">
-      <div class="teacher__image"></div>
+    <div class="teacher box" v-for="teacher in teachers" :key="teacher.id">
+      <div class="teacher__image" :style="{ backgroundImage: `url('${teacher.image.url}')` }" ></div>
       <div class="teacher__details box">
-        <h2 class="teacher__details-header header-secondary">Janina Buchalska</h2>
-        <p class="teacher__details-text text">Nauczyciel Matematyki</p>
+        <h2 class="teacher__details-header header-secondary">{{ teacher.name }}</h2>
+        <p class="teacher__details-text text">{{ teacher.caption }}</p>
       </div>
     </div>
   </div>
@@ -15,7 +15,7 @@
 
 <script>
   export default {
-    
+    props: ['teachers']
   }
 </script>
 
