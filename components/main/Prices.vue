@@ -4,7 +4,7 @@
     <div class="prices__container">
       <div class="price box" v-for="price in prices" :key="price.id">
       <div class="icon">
-        {{ price.price }}
+        <span>{{ price.price }}</span>
       </div>
       <h2 class="price__header header-secondary">{{ price.name }}</h2>
       <p class="price__text text" v-for="entry in price.entries" :key="entry.id">{{ entry.entry }}</p>
@@ -42,7 +42,7 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 4rem 3rem;
+    padding: 4rem 2rem;
     margin-bottom: 2rem;
   }
 
@@ -51,6 +51,10 @@ export default {
     font-family: 'Balo', cursive;
     font-weight: 700;
     font-size: 1.5rem;
+  }
+
+  .icon span {
+    z-index: 10;
   }
 
   .price__header {
