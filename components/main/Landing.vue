@@ -25,8 +25,8 @@
 
   .landing {
     height: auto;
-    padding-top: 10rem;
-    padding-bottom: 15rem;
+    padding-top: 6rem;
+    padding-bottom: 11rem;
     background-image: url('~assets/images/background-blue.png');
     background-size: cover;
     background-position: bottom center;
