@@ -1,0 +1,18 @@
+query pricesQuery {
+  prices {
+    id
+    price
+    name
+    entries {
+      id
+      entry
+    }
+  }
+  other(id: "5df93b0b94ef0713f036cdd7") {
+    name
+    content
+    image {
+      url
+    }
+  }
+}

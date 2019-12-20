@@ -1,6 +1,6 @@
     /*
     Flaticon icon font: Flaticon
-    Creation date: 11/12/2019 15:50
+    Creation date: 19/12/2019 08:18
     */
 
     @font-face {
@@ -45,6 +45,8 @@
 .flaticon-shield:before { content: "\f105"; }
 .flaticon-location-pin:before { content: "\f106"; }
 .flaticon-clock:before { content: "\f107"; }
+.flaticon-viber:before { content: "\f108"; }
+.flaticon-black-back-closed-envelope-shape:before { content: "\f109"; }
     
     $font-Flaticon-burger: "\f100";
     $font-Flaticon-facebook: "\f101";
@@ -54,3 +56,5 @@
     $font-Flaticon-shield: "\f105";
     $font-Flaticon-location-pin: "\f106";
     $font-Flaticon-clock: "\f107";
+    $font-Flaticon-viber: "\f108";
+    $font-Flaticon-black-back-closed-envelope-shape: "\f109";

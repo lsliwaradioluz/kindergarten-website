@@ -3,13 +3,13 @@
     <h1 class="events__header header-primary">
       Najbliższe wydarzenia
     </h1>
-    <div class="event box">
+    <div class="event box" v-for="event in events" :key="event.id">
       <div class="event__image">
       </div>
       <div class="event__content box">
-        <h2 class="event__content-header header-secondary">Wizyta zawodników judo</h2>
-        <p class="event__content-date text"><i class="flaticon-clock"></i>czwartek 20:45</p>
-        <p class="event__content-date text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+        <h2 class="event__content-header header-secondary">{{ event.name }}</h2>
+        <p class="event__content-date text"><i class="flaticon-clock"></i>{{ event.date }}</p>
+        <p class="event__content-date text">{{ event.description }}</p>
       </div>
     </div>
   </div>
@@ -17,7 +17,7 @@
 
 <script>
   export default {
-    
+    props: ['events'],
   }
 </script>
 

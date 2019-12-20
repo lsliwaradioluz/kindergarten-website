@@ -43,9 +43,9 @@
         <h1 class="about__details-header header-primary">Zapisy</h1>
         <p class="about__details-text text">Do żłobka Akuku dzieci przyjmowane są przez cały rok, w zależności od wolnych miejsc. Aby ułatwić proces rezerwacji miejsca, osoby zainteresowane prosimy o:</p>
         <ul>
-          <li class="text"><span class="c-pink">✔ </span>Wypełnienie formularza zgłoszeniowego, będącego gwarancją rezerwacji miejsca</li>
-          <li class="text"><span class="c-green">✔ </span>Odesłanie go na adres mailowy</li>
-          <li class="text"><span class="c-yellow">✔ </span>Uiszczenie opłaty wpisowej w wysokości 39 złotych</li>
+          <li class="text">Wypełnienie formularza zgłoszeniowego, będącego gwarancją rezerwacji miejsca</li>
+          <li class="text">Odesłanie go na adres mailowy</li>
+          <li class="text">Uiszczenie opłaty wpisowej w wysokości 39 złotych</li>
         </ul>
       </div>
       <div class="about__details-image">

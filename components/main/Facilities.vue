@@ -37,17 +37,6 @@
     z-index: 0;
   }
 
-  .facilities::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 3rem;
-    background-image: url('~assets/images/numbers-after.png');
-    background-size: cover;
-  }
-
   .facilities__header {
     color: white;
     z-index: 1;

@@ -1,6 +1,6 @@
 	/*
   	Flaticon icon font: Flaticon
-  	Creation date: 11/12/2019 15:50
+  	Creation date: 19/12/2019 08:18
   	*/
 
 @font-face {
@@ -21,8 +21,6 @@
     src: url("./Flaticon.svg#Flaticon") format("svg");
   }
 }
-
-
 
 [class^="flaticon-"] {
   z-index: 10;
@@ -45,3 +43,5 @@
 .flaticon-shield:before { content: "\f105"; }
 .flaticon-location-pin:before { content: "\f106"; }
 .flaticon-clock:before { content: "\f107"; }
+.flaticon-viber:before { content: "\f108"; }
+.flaticon-black-back-closed-envelope-shape:before { content: "\f109"; }

@@ -1,0 +1,7 @@
+query questionsQuery {
+  questions {
+    id
+    question
+    answer
+  }
+}

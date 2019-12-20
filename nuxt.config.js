@@ -34,6 +34,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/global.js'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -45,6 +46,8 @@ export default {
   */
   modules: [
     '@nuxtjs/apollo',
+    '@nuxtjs/axios',
+    '@nuxtjs/markdownit',
     ['@nuxtjs/dotenv', { systemvars: true }],
   ],
   apollo: {  
@@ -53,6 +56,14 @@ export default {
         httpEndpoint: process.env.GRAPHQL_URL
       }
     }
+  },
+  markdownit: {
+    preset: 'default',
+    html: true,
+    linkify: true,
+    breaks: true,
+    injected: true, 
+    typographer: true
   },
   /*
   ** Build configuration

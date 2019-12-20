@@ -10,8 +10,6 @@
   import Navigation from '~/components/Navigation.vue'
   import Footers from '~/components/Footers.vue'
 
-  
-
   export default {
     components: {
       Navigation,

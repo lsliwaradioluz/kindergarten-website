@@ -1,0 +1,12 @@
+query classesQuery {
+  schedules {
+    id
+    day
+    name 
+    description
+  }, 
+  events {
+    name
+    date
+  }
+}

@@ -24,15 +24,8 @@
       <h2 class="footer__header header-secondary">Skontaktuj się z nami</h2>
       <div v-for="footer in footers" :key="footer.id">
         <h2 class="footer__subheader header-seconary">{{ footer.name }}</h2>
-        <p class="footer__text text" v-for="entry in footer.entries" :key="entry.id">{{ entry.entry }}</p>
+        <component :is="footer.name == 'Telefon' ? 'a' : 'p'" class="footer__text text" v-for="entry in footer.entries" :key="entry.id" :href="`tel:${entry.entry}`">{{ entry.entry }}</component>
       </div>
-      <!-- <h2 class="footer__subheader header-seconary">Adres</h2>
-      <p class="footer__text text">ul. Rzeszowska 11</p>
-      <p class="footer__text text">54-027 Wrocław</p>
-      <h2 class="footer__subheader header-seconary">Telefon</h2> 
-      <p class="footer__text text">576 139 837</p>
-      <h2 class="footer__subheader header-seconary">Email</h2> 
-      <p class="footer__text text">osmalekk@gmail.com</p> -->
     </div>
     <p class="footers__signature text">Website made with joy by Łukasz Śliwa. Icons made by Freepik from www.flaticon.com
     </p>
@@ -60,6 +53,19 @@
     background-repeat: no-repeat;
     background-position: bottom center;
     padding-bottom: 5rem;
+    padding-top: 1rem;
+    position: relative;
+  }
+
+  .footers::after {
+    content: "";
+    position: absolute;
+    top: -3rem;
+    left: 0;
+    width: 100%;
+    height: 3rem;
+    background-image: url('~assets/images/numbers-after.png');
+    background-size: cover;
   }
 
   .footer {

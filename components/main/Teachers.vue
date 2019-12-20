@@ -1,13 +1,15 @@
 <template>
-  <div class="teachers main">
-    <h1 class="teachers-header header-primary">
-      Poznaj naszych nauczycieli
-    </h1>
-    <div class="teacher box" v-for="teacher in teachers" :key="teacher.id">
-      <div class="teacher__image" :style="{ backgroundImage: `url('${teacher.image.url}')` }" ></div>
-      <div class="teacher__details box">
-        <h2 class="teacher__details-header header-secondary">{{ teacher.name }}</h2>
-        <p class="teacher__details-text text">{{ teacher.caption }}</p>
+  <div class="teachers main" :class="{ 'background-blue': blue }">
+    <div class="teachers-container box">
+      <h1 class="teachers-header header-primary" v-if="blue">
+        <slot></slot>
+      </h1>
+      <div class="teacher box" v-for="teacher in filteredTeachers" :key="teacher.id" is="nuxt-link" :to="`/teachers/${teacher.id}`">
+        <div class="teacher__image" :style="{ backgroundImage: `url('${teacher.image.url}')` }" ></div>
+        <div class="teacher__details box">
+          <h2 class="teacher__details-header header-secondary">{{ teacher.name }}</h2>
+          <p class="teacher__details-text text">{{ teacher.caption }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -15,7 +17,17 @@
 
 <script>
   export default {
-    props: ['teachers']
+    props: {
+      teachers: Array, 
+      blue: Boolean
+    }, 
+    computed: {
+      filteredTeachers() {
+        return this.teachers.filter(teacher => {
+          return teacher.id !== this.$route.params.id;
+        });
+      }
+    }
   }
 </script>
 
@@ -25,7 +37,7 @@
     position: relative;
   }
 
-  .teachers::after {
+  .background-blue::after {
     content: "";
     position: absolute;
     top: 0;
@@ -37,13 +49,16 @@
     z-index: -1;
   }
 
-  .teachers-header {
+  .background-blue .teachers-header {
     color: white;
-    margin-top: 4rem;
   }
 
-  .teachers-header::after {
+  .background-blue .teachers-header::after {
     text-decoration-color: white;
+  }
+
+  .teachers-header {
+    margin-top: 4rem;
   }
 
   .teacher__image {

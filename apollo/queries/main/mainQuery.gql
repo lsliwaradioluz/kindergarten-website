@@ -1,15 +1,15 @@
 query mainQuery {
-  galleries {
-    id
+  galleries(sort: "createdAt:asc") {
     name
+    id
     image {
       url
-      id
     }
   }
   schedules {
     id
-    day 
+    day
+    name
     description
   }
   teachers {
@@ -29,9 +29,19 @@ query mainQuery {
       entry
     }
   }
-  facilities {
+  events {
     id
-    entry
+    name
+    date
+    description
+  }
+  opinions {
+    id
+    body 
+    name
     caption
+    image {
+      url
+    }
   }
 }

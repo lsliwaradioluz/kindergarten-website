@@ -1,6 +1,6 @@
 <template>
-  <div class="prices main">
-    <h1 class="prices__header header-primary">Cennik</h1>
+  <div class="prices main" :class="{  }">
+    <h1 class="prices__header header-primary" v-if="showHeader">Cennik</h1>
     <div class="prices__container">
       <div class="price box" v-for="price in prices" :key="price.id">
       <div class="icon">
@@ -8,7 +8,7 @@
       </div>
       <h2 class="price__header header-secondary">{{ price.name }}</h2>
       <p class="price__text text" v-for="entry in price.entries" :key="entry.id">{{ entry.entry }}</p>
-      <button class="price__button button-yellow">Zapisz się</button>
+      <nuxt-link :to="{ name: 'contact', params: { focusForm: true } }" class="price__button button-yellow" @click.native="$root.$emit('sendMessage')">Zapisz się</nuxt-link>
     </div>
     </div>
   </div>
@@ -16,7 +16,10 @@
 
 <script>
 export default {
-  props: ['prices']
+  props: {
+    prices: Array, 
+    showHeader: Boolean
+  },
 }
 </script>
 
@@ -25,6 +28,7 @@ export default {
   .prices {
     padding-left: 2rem;
     padding-right: 2rem;
+    padding-bottom: 1rem;
   }
 
   .prices__header {
@@ -76,7 +80,7 @@ export default {
 
   .price:nth-child(3) .icon,
   .price:nth-child(3) .price__button {
-    background-color: #19AA5F;
+    background-color: #05AA19;
   }
 
 </style>

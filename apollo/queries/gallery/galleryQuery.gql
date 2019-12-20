@@ -1,0 +1,11 @@
+query galleryQuery {
+  galleries {
+    id
+    name
+    image {
+      url
+      id
+    }
+  }
+}
+

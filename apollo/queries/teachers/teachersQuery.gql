@@ -1,0 +1,10 @@
+query teachersQuery {
+  teachers {
+    id
+    name
+    caption
+    image {
+      url
+    }
+  }
+}

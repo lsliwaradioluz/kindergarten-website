@@ -8,22 +8,39 @@
 body {
   margin: 0;
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 400;
   font-family: 'Lato', sans-serif;
   letter-spacing: 0.05em;
-}
-
-p {
-  margin: 0;
 }
 
 ul {
   margin: 0;
   padding: 0;
 }
-
 li {
   list-style: none;
+  position: relative;
+  color: rgb(158, 158, 158);
+  padding-left: 1.5rem;
+}
+
+li::before {
+  content: "✔ "; 
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #FA67BF;
+}
+
+li:nth-child(2n)::before {
+  content: "✔ "; 
+  color: #05AA19;
+}
+
+li:nth-child(3n)::before {
+  content: "✔ "; 
+  color: #FEB836;
 }
 
 a {
@@ -31,9 +48,14 @@ a {
   text-decoration: none;
 }
 
+img {
+  width: 100%;
+}
+
 /*TEXT*/
 
-.header-primary {
+.header-primary,
+h1 {
   font-size: 2.5rem;
   font-family: 'Baloo', cursive;
   color: #1C2431;
@@ -44,7 +66,8 @@ a {
   text-align: center;
 }
 
-.header-primary::after {
+.header-primary::after, 
+h1::after {
   content: "aaaaa";
   text-align: center;
   width: 50%;
@@ -53,9 +76,18 @@ a {
   left: 25%;
   color: transparent;
   text-decoration: underline;
-  text-decoration-color: #58C189;
+  text-decoration-color: #05AA19;
   font-size: 1.5rem;
   text-decoration-style: wavy;
+}
+
+h1 {
+  text-align: left;
+}
+
+h1::after {
+  left: 0;
+  text-align: left;
 }
 
 @media (min-width: 768px) {
@@ -80,6 +112,15 @@ a {
   margin: 0;
 }
 
+h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  color: #1C2431;
+  text-align: left;
+  letter-spacing: 0;
+}
+
 /* @media (min-width: 768px) {
   .header-secondary {
     font-size: 1.875rem;
@@ -92,10 +133,15 @@ a {
   }
 } */
 
-.text {
+.text,
+p {
   color: rgb(158, 158, 158);
   text-align: center;
   margin: 1rem 0;
+}
+
+p {
+  text-align: left;
 }
 
 /*ELEMENTS*/
@@ -121,7 +167,7 @@ a {
 
 .button-yellow:hover,
 .button-yellow:active {
-  background-color: rgb(241, 177, 56);
+  opacity: 0.9;
 }
 
 .button-transparent {

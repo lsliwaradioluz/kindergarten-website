@@ -2,13 +2,13 @@
   <div>
     <Landing />
     <About />
-    <Events />
-    <Schedules :schedules="schedules" />
-    <Gallery :images="images" />
-    <Teachers :teachers="teachers" />
-    <Prices :prices="prices" />
-    <Opinions />
-    <Facilities :facilities="facilities"/>
+    <Events :events="events" />
+    <Schedules :schedules="schedules" carousel />
+    <Gallery :galleries="galleries" main />
+    <Teachers :teachers="teachers" blue >Poznaj naszych nauczycieli</Teachers>
+    <Prices :prices="prices" showHeader />
+    <Opinions :opinions="opinions" />
+    <Countdown :events="events" main/>
   </div>
 </template>
 
@@ -21,7 +21,7 @@ import Gallery from '~/components/main/Gallery.vue'
 import Teachers from '~/components/main/Teachers.vue'
 import Prices from '~/components/main/Prices.vue'
 import Opinions from '~/components/main/Opinions.vue'
-import Facilities from '~/components/main/Facilities.vue'
+import Countdown from '~/components/main/Countdown.vue'
 
 import mainQuery from '~/apollo/queries/main/mainQuery.gql'
 
@@ -35,19 +35,21 @@ export default {
     Teachers,
     Prices,
     Opinions,
-    Facilities
+    Countdown
   },
   asyncData(context) {
     let client = context.app.apolloProvider.defaultClient;
     return client.query({ query: mainQuery })
       .then(({ data }) => {
-        const slicedImages = data.galleries[0].image.slice(0, 6);
+        const galleries = data.galleries;
+        galleries[0].image = data.galleries[0].image.splice(0, 5);
         return {
-          images: slicedImages, 
+          galleries: galleries, 
           schedules: data.schedules, 
           teachers: data.teachers, 
           prices: data.prices, 
-          facilities: data.facilities
+          events: data.events, 
+          opinions: data.opinions
         }
       });
   },

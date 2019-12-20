@@ -8,7 +8,7 @@
         <p>W żłobku Akuku dbamy o harmonijmy rozwój dzieci. Chcemy, by z nami czuły się szczęsliwe i bezpieczne!</p>
       </div>
       <div class="landing__content-buttons">
-        <button class="landing__content-button button-yellow">Zadzwoń</button>
+        <a href="tel:576139837" class="landing__content-button button-yellow">Zadzwoń</a>
         <button class="landing__content-button button-transparent">O nas</button>
       </div>
     </div>
@@ -25,13 +25,12 @@
 
   .landing {
     height: 100vh;
-    padding-top: 5rem;
     background-image: url('~assets/images/background-blue.png');
     background-size: cover;
     background-position: bottom center;
     color: white;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .header-primary {
@@ -43,6 +42,10 @@
 
   .header-primary::after {
     display: none;
+  }
+
+  .landing__content-text p {
+    color: white;
   }
 
   .landing__content-buttons {

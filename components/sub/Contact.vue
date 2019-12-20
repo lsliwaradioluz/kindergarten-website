@@ -1,0 +1,75 @@
+<template>
+  <div class="contacts main">
+    <div class="contact box" v-for="contact in contacts" :key="contact.id">
+      <div class="contact__icon icon">
+        <i :class="assignIcon(contact.name)"></i>
+      </div>
+      <h2 class="contact__header header-secondary">{{ contact.name }}</h2>
+      <p class="contact__text text" v-for="entry in contact.entries" :key="entry.id">{{ entry.entry }}</p>
+    </div>
+  </div>
+</template>
+
+<script>
+  export default {
+    props: ['contacts'], 
+    methods: {
+      assignIcon(contactName) {
+        switch(contactName) {
+          case 'Adres': 
+            return 'flaticon-location-pin'
+            break
+          case 'Telefon': 
+            return 'flaticon-viber'
+            break
+          case 'Email':
+            return 'flaticon-black-back-closed-envelope-shape';
+        }
+      }
+    }
+  }
+</script>
+
+<style scoped>
+
+  .contacts {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .contact {
+    height: 17rem;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 2px #f2f2f2;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .contact:nth-child(1) .contact__icon {
+    background-color: #FA67BF;
+  }
+
+  .contact:nth-child(2) .contact__icon {
+    background-color: #FEB836;
+  }
+
+  .contact:nth-child(3) .contact__icon {
+    background-color: #05AA19;
+  }
+
+  .contact__header {
+    margin-bottom: 1rem;
+  }
+
+  .contact__text {
+    margin: 0;
+  }
+
+  [class*="flaticon-"]:before {
+    font-size: 40px;
+  }
+</style>

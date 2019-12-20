@@ -1,0 +1,19 @@
+query teacherQuery($id: ID!) {
+  teacher(id: $id) {
+    id
+    name
+    caption
+    description
+    image {
+      url
+    }
+  },
+  teachers {
+    id
+    name
+    caption
+    image {
+      url
+    }
+  }
+}
