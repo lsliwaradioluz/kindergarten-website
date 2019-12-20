@@ -48,7 +48,7 @@ export default {
 
   .icon {
     color: white;
-    font-family: 'Balo', cursive;
+    font-family: 'Baloo', cursive;
     font-weight: 700;
     font-size: 1.5rem;
   }
