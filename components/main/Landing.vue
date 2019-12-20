@@ -13,7 +13,7 @@
       </div>
     </div>
   </div>  
-</template>
+</template> 
 
 <script>
   export default {
@@ -24,11 +24,13 @@
 <style scoped>
 
   .landing {
-    height: 100vh;
+    height: auto;
+    padding-top: 6rem;
+    padding-bottom: 10rem;
     background-image: url('~assets/images/background-blue.png');
     background-size: cover;
     background-position: bottom center;
-    color: white;
+    color: rgb(80, 69, 69);
     display: flex;
     align-items: center;
   }
