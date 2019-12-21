@@ -52,6 +52,6 @@ export default {
           opinions: data.opinions
         }
       });
-  },
+  }
 }
 </script>

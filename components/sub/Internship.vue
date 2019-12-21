@@ -2,7 +2,7 @@
   <div class="internship main">
     <h1 class="internship__header header-primary">Studiujesz i chcesz odbyć praktyki?</h1>
     <p class="internship__text text">W Akuku pomożemy Ci zdobyć Twoje pierwsze zawodowe doświadczenie. Jeśli chcesz rozpocząć pracę w charakterze opiekuna, masz odpowiednie kwalifikacje, chęć do nauki oraz dobre podejście do dzieci - zapewnimy Ci odpowiedni start!</p>
-    <button class="internship__button button-yellow">Aplikuj</button>
+    <button class="internship__button button-yellow" @click="$root.$emit('focusForm')">Aplikuj</button>
   </div>
 </template>
 

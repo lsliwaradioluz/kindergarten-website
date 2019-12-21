@@ -1,5 +1,5 @@
 <template>
-  <div class="about main">
+  <div class="about main" ref="about">
     <div class="about__facilities">
       <h1 class="header-primary">W Akuku dzieci czują się jak w domu</h1>
       <div class="about__facilities-tabs">
@@ -57,7 +57,6 @@
 
 <script>
   export default {
-    
   }
 </script>
 

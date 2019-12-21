@@ -17,6 +17,9 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  env: { 
+    environment: process.env.NODE_ENV
+  },
   /*
   ** Customize the progress-bar color
   */

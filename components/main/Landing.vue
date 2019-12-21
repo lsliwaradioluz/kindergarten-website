@@ -9,7 +9,7 @@
       </div>
       <div class="landing__content-buttons">
         <a href="tel:576139837" class="landing__content-button button-yellow">Zadzwoń</a>
-        <button class="landing__content-button button-transparent">O nas</button>
+        <button class="landing__content-button button-transparent" @click="$emit('scroll')">O nas</button>
       </div>
     </div>
   </div>  
