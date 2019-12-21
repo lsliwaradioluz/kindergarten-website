@@ -56,7 +56,7 @@ export default {
   apollo: {  
     clientConfigs: {
       default: {
-        httpEndpoint: process.env.GRAPHQL_URL
+        httpEndpoint: process.env.NODE_ENV == 'development' ? 'http://localhost:1337/graphql' : 'https://akuku-backend.herokuapp.com/graphql'
       }
     }
   },

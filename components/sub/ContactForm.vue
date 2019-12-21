@@ -9,7 +9,7 @@
       <input class="contact-form" placeholder="Twój adres email" v-model="form.from" type="email" required ref="email" :disabled="loading">
       <input class="contact-form" placeholder="Temat" v-model="form.subject" type="text" required :disabled="loading">
       <textarea class="contact-form" placeholder="Treść" rows="6" v-model="form.text" required :disabled="loading"></textarea>
-      <button ref="formbutton" :disabled="loading" type="submit" class="contact-form__button button-yellow b-green" @click.prevent="sendForm">Wyślij</button>
+      <button ref="formbutton" :disabled="loading" type="submit" class="contact-form__button button-yellow b-green" @click.prevent="sendForm">{{ buttonText }}</button>
     </form>
   </div>
 </template>
@@ -27,7 +27,8 @@
           subject: '',
           text: ''
         },
-        loading: false
+        loading: false, 
+        buttonText: 'Wyślij'
       }
     },
     methods: {
@@ -36,20 +37,20 @@
         const endpoint = process.env.environment == 'development' ? 'http://localhost:1337/email' : 'https://akuku-backend.herokuapp.com/email';
         this.$axios.$post(endpoint, this.form)
           .then(res => {
-            this.$refs.formbutton.innerText = 'Wysłano!';
+            this.buttonText = 'Wysłano!';
             setTimeout(() => {
               this.loading = false;
-              this.$refs.formbutton.innerText = 'Wyślij';
+              this.buttonText = 'Wyślij';
               this.form.from = '';
               this.form.subject = '';
               this.form.text = '';
             }, 2000);
           })
           .catch(err => {
-            this.$refs.formbutton.innerText = 'Błąd!';
+            this.buttonText = 'chujemuje!';
             setTimeout(() => {
               this.loading = false;
-              this.$refs.formbutton.innerText = 'Wyślij';
+              this.buttonText = 'Wyślij';
               this.form.from = '';
               this.form.subject = '';
               this.form.text = '';

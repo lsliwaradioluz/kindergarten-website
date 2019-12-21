@@ -159,7 +159,7 @@ p {
   letter-spacing: 0.02em;
   text-align: center;
   cursor: pointer;
-  transition: 250ms all ease-in-out;
+  transition: all 250ms;
   font-family: 'Lato', sans-serif;
   display: inline-block;
   outline: none;
