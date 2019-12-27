@@ -1,11 +1,13 @@
 <template>
   <div class="contacts main">
-    <div class="contact box" v-for="contact in contacts" :key="contact.id">
-      <div class="contact__icon icon">
-        <i :class="assignIcon(contact.name)"></i>
+    <div class="contacts__container box">
+      <div class="contact box" v-for="contact in contacts" :key="contact.id">
+        <div class="contact__icon icon">
+          <i :class="assignIcon(contact.name)"></i>
+        </div>
+        <h2 class="contact__header header-secondary">{{ contact.name }}</h2>
+        <p class="contact__text text" v-for="entry in contact.entries" :key="entry.id">{{ entry.entry }}</p>
       </div>
-      <h2 class="contact__header header-secondary">{{ contact.name }}</h2>
-      <p class="contact__text text" v-for="entry in contact.entries" :key="entry.id">{{ entry.entry }}</p>
     </div>
   </div>
 </template>
@@ -32,21 +34,24 @@
 
 <style scoped>
 
-  .contacts {
-    padding-left: 2rem;
-    padding-right: 2rem;
+  .contacts__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .contact {
     height: 17rem;
+    width: 100%;
+    max-width: 256px;
+    margin-bottom: 2rem;
+    padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 0 10px 2px #f2f2f2;
-    padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 2rem;
   }
 
   .contact:nth-child(1) .contact__icon {

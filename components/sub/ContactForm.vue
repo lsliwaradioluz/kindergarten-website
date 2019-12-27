@@ -1,6 +1,6 @@
 <template>
   <div class="contact-forms main" :class="{ 'green-background': isContact}" ref="form">
-    <div class="contact-forms__map" >
+    <div class="contact-forms__map" v-if="isContact">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2503.3652004329683!2d16.888437467313356!3d51.138616242881504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470feaab7dc4f063%3A0xb2ad3dcfc3110d0!2zxbvFgm9iZWsgIkEgS3VrdSI!5e0!3m2!1spl!2spl!4v1576750996433!5m2!1spl!2spl" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
     </div>
     <form class="contact-forms__container">

@@ -1,5 +1,5 @@
 <template>
-  <div class="navigation" :class="{ 'navigation-triggered': scroll }">
+  <div class="navigation main" :class="{ 'navigation-triggered': scroll }">
     <div class="navigation__logo logo" is="nuxt-link" to="/">
       aku<span class="c-yellow">ku</span>
     </div>
@@ -37,6 +37,9 @@
       }
     },
     mounted() {
+      if (window.innerWidth >= 1024) {
+        this.navToggled = true;
+      }
       window.addEventListener('scroll', () => {
         this.scroll = window.scrollY;
       });
@@ -51,7 +54,8 @@
     width: 100%;
     top: 0;
     left: 0;
-    padding: 1.3rem 1rem;
+    padding-top: 1.3rem;
+    padding-bottom: 1.3rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -68,7 +72,8 @@
   }
 
   .navigation-triggered {
-    padding: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     background-color: rgb(76, 96, 228);
     box-shadow: 0px 0px 10px 0px #111;    
   }
@@ -108,5 +113,46 @@
   .navigation__logo {
     z-index: 998;
     color: white;
+  }
+
+  @media (min-width: 1024px) {
+
+    .navigation__logo {
+      width: 30%;
+    }
+
+    .navigation__hamburger {
+      display: none;
+    }
+
+    .navigation__links {
+      height: 100vh;
+      width: 100%;
+      background-color: rgb(76, 96, 228);
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .navigation__links {
+      padding: 0;
+      font-size: 1.5rem;
+      height: auto;
+      background-color: transparent;
+      position: static;
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+
+    .navigation__link {
+      font-size: 1rem;
+      font-weight: 300;
+      margin-left: 3%;
+    }
   }
 </style>

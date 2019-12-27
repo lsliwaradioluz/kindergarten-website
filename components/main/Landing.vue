@@ -12,6 +12,9 @@
         <button class="landing__content-button button-transparent" @click="$emit('scroll')">O nas</button>
       </div>
     </div>
+    <div class="landing__image">
+
+    </div>
   </div>  
 </template> 
 
@@ -29,7 +32,7 @@
     padding-bottom: 11rem;
     background-image: url('~assets/images/background-blue.png');
     background-size: cover;
-    background-position: bottom center;
+    background-position: right bottom;
     color: rgb(80, 69, 69);
     display: flex;
     align-items: center;
@@ -62,6 +65,39 @@
   
   .button-yellow {
     color: black;
+  }
+
+  .landing__image {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    
+    .landing {
+      height: 100vh;
+    }
+  }
+
+  @media (min-width: 1024px) {
+
+    .header-primary {
+      font-size: 3.5rem;
+      line-height: 3rem;
+    }
+
+    .landing__content {
+      width: 50%;
+    }
+
+    .landing__image {
+      display: block;
+      height: 100%;
+      width: 50%;
+      background-image: url('https://res.cloudinary.com/dejowg6jk/image/upload/v1577375278/bhlku0bznempyjstud1m.png');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
   }
 
 </style>

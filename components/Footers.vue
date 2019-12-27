@@ -76,12 +76,12 @@
     display: block;
     text-align: left;
     margin-bottom: 0;
-    margin-top: 0.75rem;
+    margin-top: 0.5rem;
   }
 
   .text {
     text-align: left;
-    margin-top: 0;
+    margin: 0;
     padding-right: 2rem;
   }
 
@@ -92,9 +92,24 @@
 
   .footer__subheader {
     font-size: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   .footers__signature {
     margin-top: 2rem;
+  }
+
+  @media (min-width: 1024px) {
+    .footers {
+      display: grid;
+      grid-template-columns: 37% 21% 21% 21%;
+      grid-template-areas: ". . . ."
+                           "s s s s";
+    }
+
+    .footers__signature {
+      grid-area: s;
+      text-align: center;
+    }
   }
 </style>

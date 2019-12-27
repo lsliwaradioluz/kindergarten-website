@@ -3,13 +3,15 @@
     <h1 class="events__header header-primary">
       Najbliższe wydarzenia
     </h1>
-    <div class="event box" v-for="event in events" :key="event.id">
-      <div class="event__image">
-      </div>
-      <div class="event__content box">
-        <h2 class="event__content-header header-secondary">{{ event.name }}</h2>
-        <p class="event__content-date text"><i class="flaticon-clock"></i>{{ event.date }}</p>
-        <p class="event__content-date text">{{ event.description }}</p>
+    <div class="events__container box">
+      <div class="event" v-for="event in events" :key="event.id">
+        <div class="event__image">
+        </div>
+        <div class="event__content box">
+          <h2 class="event__content-header header-secondary">{{ event.name }}</h2>
+          <p class="event__content-date text"><i class="flaticon-clock"></i>{{ event.date }}</p>
+          <p class="event__content-date text">{{ event.description }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -31,7 +33,7 @@
   .events::before {
     content: "";
     background-image: url('~assets/images/before.png');
-    background-size: cover;
+    background-size: contain;
     width: 100%;
     height: 1rem;
     position: absolute;
@@ -42,7 +44,7 @@
   .events::after {
     content: "";
     background-image: url('~assets/images/before.png');
-    background-size: cover;
+    background-size: contain;
     width: 100%;
     height: 1rem;
     position: absolute;
@@ -59,8 +61,15 @@
     text-decoration-color: white;
   }
 
+  .events__container {
+    display: flex;
+    justify-content: center;
+  }
+
   .event {
     border-radius: 15px;
+    width: 100%;
+    max-width: 256px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -70,34 +79,29 @@
     background-image: url('https://images.unsplash.com/photo-1519340241574-2cec6aef0c01?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1789&q=80');
     background-size: cover;
     background-position: center;
-    height: 30vh;
     width: 100%;
+    padding-top: 100%;
     border-top-right-radius: inherit;
     border-top-left-radius: inherit;
   }
 
   .event__content {
-    background-color: #FEB836;
-    border-bottom-left-radius: inherit;
     border-bottom-right-radius: inherit;
-    width: 100%;
+    width: calc(100% - 1rem);
+    background-color: white;
     position: relative;
-    z-index: 2;
-    padding-left: 3rem;
-    padding-bottom: 3rem;
+    border: none;
   }
 
   .event__content::before {
     content: "";
-    background-color: white;
-    height: 90%;
-    width: 90%;
+    background-color: #FEB836;
+    height: 100%;
+    width: 1rem;
     position: absolute;
-    right: 0;
+    left: -1rem;
     top: 0;
-    border-bottom-left-radius: inherit;
-    border-bottom-right-radius: inherit;
-    z-index: -1;
+    border-bottom-left-radius: 15px;
   }
 
   .event__content-header {
@@ -113,5 +117,12 @@
     color: #FEB836;
     margin-right: 0.5rem;
     font-size: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .events__container {
+      padding-left: 20%;
+      padding-right: 20%;
+    }
   }
 </style>

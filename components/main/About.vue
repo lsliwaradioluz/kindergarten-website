@@ -1,5 +1,5 @@
 <template>
-  <div class="about main" ref="about">
+  <div class="abouts main" ref="about">
     <div class="about__facilities">
       <h1 class="header-primary">W Akuku dzieci czują się jak w domu</h1>
       <div class="about__facilities-tabs">
@@ -85,10 +85,44 @@
 
   .about__details-image {
     display: none;
-    height: 30vh;
     width: 50%;
+    padding-top: 30%;
     background-image: url('https://images.unsplash.com/flagged/photo-1551887373-6edba6dacbb1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
     background-size: cover;
     background-position: center;
+    margin-top: 2rem;
+    margin-left: 5%;
   }
+
+  @media (min-width: 1024px) {
+
+    .about__facilities-tabs {
+      flex-direction: row;
+    }
+
+    .about__facilities-tab {
+      flex-basis: 0;
+      flex-grow: 1;
+    }
+
+    .about__details-header,
+    .about__details-header::after {
+      text-align: left;
+      left: 0;
+    }
+
+    .about__details {
+      display: flex;
+    }
+
+    .about__details div {
+      flex-basis: 0;
+      flex-grow: 1;
+    }
+
+    .about__details-image {
+      display: block;
+    }
+
+  } 
 </style>

@@ -2,7 +2,9 @@
   <div class="schedules main">
     <h1 class="schedules__header header-primary">Plan tygodnia</h1>
     <div class="schedules__container">
-      <Carousel :inactive="!carousel" >
+      <Carousel 
+        :inactive="!carousel"
+        :columns="[[768, 2], [1024, 3], [1440, 4]]">
         <div class="schedule box" v-for="schedule in schedules" :key="schedule.id">
           <div class="schedule__content box">
             <h2 class="schedule__content-header header-secondary">{{ schedule.day }}</h2>
@@ -46,6 +48,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    max-width: 256px;
   }
 
   .schedule__content-header {

@@ -1,7 +1,7 @@
 <template>
-  <div class="prices main" :class="{  }">
+  <div class="prices main">
     <h1 class="prices__header header-primary" v-if="showHeader">Cennik</h1>
-    <div class="prices__container">
+    <div class="prices__container box">
       <div class="price box" v-for="price in prices" :key="price.id">
       <div class="icon">
         <span>{{ price.price }}</span>
@@ -25,14 +25,15 @@ export default {
 
 <style scoped>
 
-  .prices {
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-bottom: 1rem;
-  }
-
   .prices__header {
     margin-top: 0;
+  }
+
+  .prices__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   .price {
@@ -44,6 +45,8 @@ export default {
     align-items: center;
     padding: 4rem 2rem;
     margin-bottom: 2rem;
+    width: 100%;
+    max-width: 280px;
   }
 
   .icon {
@@ -51,6 +54,13 @@ export default {
     font-family: 'Baloo', cursive;
     font-weight: 700;
     font-size: 1.5rem;
+    height: 5.5rem;
+    width: 5.5rem;
+  }
+
+  .icon::before {
+    height: 4.5rem;
+    width: 4.5rem;
   }
 
   .icon span {
@@ -85,6 +95,26 @@ export default {
   .price:nth-child(3) .icon,
   .price:nth-child(3) .price__button {
     background-color: #05AA19;
+  }
+
+  @media (min-width: 768px) {
+    
+    .prices__container {
+      padding-left: 20%;
+      padding-right: 20%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .prices__container {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0;
+    }
+
+    .price {
+      flex-basis: 30%;
+    }
   }
 
 </style>
