@@ -2,10 +2,10 @@
   <div class="schedules main">
     <h1 class="schedules__header header-primary">Plan tygodnia</h1>
     <div class="schedules__container">
-      <Carousel 
-        :inactive="!carousel"
-        :columns="[[768, 2], [1024, 3], [1440, 4]]">
-        <div class="schedule box" v-for="schedule in schedules" :key="schedule.id">
+      <Carousel
+        :active="active"
+        :columns="[[768, 2], [1024, 4], [1440, 4]]">
+        <div class="schedule" v-for="schedule in schedules" :key="schedule.id">
           <div class="schedule__content box">
             <h2 class="schedule__content-header header-secondary">{{ schedule.day }}</h2>
             <p class="schedule__content-text text">{{ schedule.name }}: {{ schedule.description }}</p>
@@ -20,14 +20,9 @@
 
   export default {
     props: {
-      schedules: Array, 
-      carousel: Boolean
+      schedules: Array,
+      active: Array
     },
-    computed: {
-      showCarousel() {
-        return this.$route.path == '/' ? true : false;
-      }
-    }
   }
 </script>
 
@@ -37,6 +32,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 1rem;
   }
 
   .schedule__content {
@@ -57,5 +53,10 @@
 
   .schedule__content-text {
     margin: 0;
+  }
+
+  @media (min-width: 1024px) {
+    
+  
   }
 </style>

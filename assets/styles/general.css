@@ -17,11 +17,13 @@ ul {
   margin: 0;
   padding: 0;
 }
+
 li {
   list-style: none;
   position: relative;
   color: rgb(158, 158, 158);
   padding-left: 1.5rem;
+  margin: 1rem 0;
 }
 
 li::before {
@@ -34,12 +36,10 @@ li::before {
 }
 
 li:nth-child(2n)::before {
-  content: "✔ "; 
   color: #05AA19;
 }
 
 li:nth-child(3n)::before {
-  content: "✔ "; 
   color: #FEB836;
 }
 
@@ -81,15 +81,6 @@ h1::after {
   text-decoration-style: wavy;
 }
 
-h1 {
-  text-align: left;
-}
-
-h1::after {
-  left: 0;
-  text-align: left;
-}
-
 @media (min-width: 768px) {
   .header-primary {
     font-size: 1.875rem;
@@ -119,6 +110,7 @@ h3 {
   color: #1C2431;
   text-align: left;
   letter-spacing: 0;
+  margin: 0;
 }
 
 /* @media (min-width: 768px) {
@@ -246,6 +238,17 @@ p {
   h1 {
     font-size: 3rem;
     line-height: 3rem;
+  }
+
+  img {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  img:nth-child(2) {
+    width: 40%;
+    float: right;
+    margin-left: 1rem;
   }
 }
 

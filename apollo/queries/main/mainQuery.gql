@@ -34,6 +34,9 @@ query mainQuery {
     name
     date
     description
+    image {
+      url
+    }
   }
   opinions {
     id

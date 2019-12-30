@@ -91,9 +91,9 @@
 
     .landing__image {
       display: block;
-      height: 100%;
+      height: 80%;
       width: 50%;
-      background-image: url('https://res.cloudinary.com/dejowg6jk/image/upload/v1577375278/bhlku0bznempyjstud1m.png');
+      background-image: url('~assets/images/kid2.png');
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;

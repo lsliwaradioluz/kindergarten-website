@@ -27,10 +27,11 @@
     padding-bottom: 4rem;
   }
 
-  .internship::before {
+  .internship::before,
+  .internship::after {
     content: "";
     background-image: url('~assets/images/before.png');
-    background-size: cover;
+    background-size: contain;
     width: 100%;
     height: 1rem;
     position: absolute;
@@ -39,14 +40,8 @@
   }
 
   .internship::after {
-    content: "";
-    background-image: url('~assets/images/before.png');
-    background-size: cover;
-    width: 100%;
-    height: 1rem;
-    position: absolute;
+    top: initial;
     bottom: 0;
-    left: 0;
     transform: rotate(180deg);
   }
 
@@ -67,5 +62,17 @@
   
   .internship__button {
     z-index: 1;
+  }
+
+  @media (min-width: 768px) {
+    .internship {
+      padding: 4rem 25%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .internship {
+      padding: 8rem 25%;
+    }
   }
 </style>

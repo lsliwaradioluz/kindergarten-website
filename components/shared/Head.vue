@@ -26,6 +26,7 @@
     content: "";
     background-image: url('~assets/images/head-after-2.png');
     background-size: cover;
+    background-position: center bottom;
     position: absolute;
     bottom: 0;
     left: 0;

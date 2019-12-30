@@ -1,7 +1,7 @@
 <template>
   <div>
     <Head>Nasze zajęcia</Head>
-    <Schedules :schedules="schedules" />
+    <Schedules :schedules="schedules" :active="[[ 768, true ]]" />
     <Countdown :events="events" sub />
   </div>
 </template>

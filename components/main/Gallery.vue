@@ -7,10 +7,10 @@
         :class="{ 'button-active' : current == index }" 
         v-for="(gallery, index) in galleries" 
         :key="gallery.id" 
-        @click="current = index">{{ gallery.name }}</button>
+        @click="displayGallery(index)">{{ gallery.name }}</button>
     </div>
     <transition name="fade" mode="out-in">
-      <div class="gallery__images" :key="current">
+      <div class="gallery__images" :key="current" ref="images">
         <div 
           class="gallery__image" 
           :class="{ 'main-class': main }" 
@@ -35,7 +35,11 @@
         current: 0
       }
     },
-    computed: {
+    methods: {
+      displayGallery(index) {
+        this.current = index;
+        this.$refs.images.scrollIntoView({ behavior: 'smooth' });
+      }
     }
     
   }
@@ -55,6 +59,8 @@
     padding-bottom: 3rem;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
   }
 
   .gallery__button {
@@ -62,6 +68,7 @@
     border: 0.5px solid rgb(212, 212, 212);
     font-weight: 500;
     width: 45%;
+    margin: 0.5rem;
   }
 
   .gallery__images {
@@ -83,6 +90,7 @@
 
   .last {
     background-image: url('~assets/images/kids.jpg');
+    cursor: pointer;
   }
 
   .last::after {
@@ -100,6 +108,11 @@
     font-weight: 500;
     font-family: 'Baloo', cursive;
     background-color: rgba(5, 170, 24, 0.849);
+    transition: all 0.3s;
+  }
+
+  .last:hover::after {
+    background-color: rgba(3, 143, 20, 0.849);  
   }
 
   .button-active {
@@ -121,6 +134,14 @@
       height: 0;
       padding-top: 100%;
       margin: 0;
+    }
+
+    .gallery__buttons {
+      justify-content: center;
+    }
+
+    .gallery__button {
+      width: auto;
     }
   }
 

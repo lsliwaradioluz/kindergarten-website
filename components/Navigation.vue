@@ -7,7 +7,7 @@
       <i class="flaticon-burger"></i>
     </div>
     <transition name="slide">
-      <div class="navigation__links main" v-if="navToggled" @click="showNav($event)">
+      <div class="navigation__links main" @click="showNav($event)" ref="navigation">
         <nuxt-link to="/classes" class="navigation__link">Zajęcia</nuxt-link>
         <nuxt-link to="/catering" class="navigation__link">Catering</nuxt-link>
         <nuxt-link to="/teachers" class="navigation__link">Wychowawcy</nuxt-link>
@@ -25,21 +25,17 @@
   export default {
     data() {
       return {
-        navToggled: false, 
         scroll: 0
       }
     },
     methods: {
       showNav(event) {
         if (event.target.classList.contains('navigation__links') == false) {
-          this.navToggled = !this.navToggled;
+          this.$refs.navigation.classList.toggle('toggled');
         }
       }
     },
     mounted() {
-      if (window.innerWidth >= 1024) {
-        this.navToggled = true;
-      }
       window.addEventListener('scroll', () => {
         this.scroll = window.scrollY;
       });
@@ -90,6 +86,8 @@
     justify-content: center;
     align-items: center;
     z-index: 999;
+    transform: translateY(-100%);
+    transition: transform 0.5s;
   }
 
   .navigation__link {
@@ -137,6 +135,7 @@
       justify-content: center;
       align-items: center;
       z-index: 999;
+      transform: translateY(0);
     }
 
     .navigation__links {
@@ -154,5 +153,9 @@
       font-weight: 300;
       margin-left: 3%;
     }
+  }
+
+  .toggled {
+    transform: translateY(0);
   }
 </style>

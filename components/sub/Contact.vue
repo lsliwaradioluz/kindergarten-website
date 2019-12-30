@@ -77,4 +77,16 @@
   [class*="flaticon-"]:before {
     font-size: 40px;
   }
+
+  @media (min-width: 1024px) {
+    
+    .contacts__container {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .contact {
+      width: 32%;
+    }
+  }
 </style>

@@ -29,6 +29,11 @@ export default {
 
 <style scoped>
 
+  .questions {
+    display: flex;
+    flex-direction: column;
+  }
+
   .question {
     display: flex;
     flex-direction: column;
@@ -53,5 +58,24 @@ export default {
 
   .question__content-text {
     text-align: justify;
+  }
+
+  @media (min-width: 1024px) {
+    .questions {
+      flex-direction: row;
+    }
+
+    .question {
+      width: 50%;
+      flex-direction: row;
+    }
+
+    .question__content {
+      padding-left: 2rem;
+    }
+
+    .question__content-header {
+      text-align: left;
+    }
   }
 </style>

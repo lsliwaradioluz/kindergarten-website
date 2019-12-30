@@ -9,10 +9,10 @@
     <div class="footer">
       <h2 class="footer__header header-secondary">Przydatne linki</h2>
       <nuxt-link to="/" class="text" tag="a">Strona Główna</nuxt-link>
-      <nuxt-link to="/" class="text" tag="a">Catering</nuxt-link>
-      <nuxt-link to="/" class="text" tag="a">Wychowawcy</nuxt-link>
-      <nuxt-link to="/" class="text" tag="a">Cennik</nuxt-link>
-      <nuxt-link to="/" class="text" tag="a">Kontakt</nuxt-link>
+      <nuxt-link to="/catering" class="text" tag="a">Catering</nuxt-link>
+      <nuxt-link to="/teachers" class="text" tag="a">Wychowawcy</nuxt-link>
+      <nuxt-link to="/prices" class="text" tag="a">Cennik</nuxt-link>
+      <nuxt-link to="/contact" class="text" tag="a">Kontakt</nuxt-link>
     </div>
     <div class="footer">
       <h2 class="footer__header header-secondary">Dokumenty</h2>

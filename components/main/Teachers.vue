@@ -5,7 +5,9 @@
     </h1>
     <div class="teachers-container box">
       <div class="teacher" v-for="teacher in filteredTeachers" :key="teacher.id" is="nuxt-link" :to="`/teachers/${teacher.id}`">
-        <div class="teacher__image" :style="{ backgroundImage: `url('${teacher.image.url}')` }" ></div>
+        <div class="teacher__image" :style="{ backgroundImage: `url('${teacher.image.url}')` }" >
+          <div class="teacher__image-overlay"></div>
+        </div>
         <div class="teacher__details box">
           <h2 class="teacher__details-header header-secondary">{{ teacher.name }}</h2>
           <p class="teacher__details-text text">{{ teacher.caption }}</p>
@@ -81,6 +83,20 @@
     width: 100%;
     background-size: cover;
     background-position: center;
+    position: relative;
+  }
+
+  .teacher__image-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: background-color 0.3s;
+  }
+
+  .teacher:hover .teacher__image-overlay {
+    background-color: rgba(77, 100, 249, 0.158);
   }
 
   .teacher__details-text {
@@ -108,7 +124,7 @@
     .teachers-container {
       flex-direction: row;
       align-items: flex-start;
-      justify-content: space-between;
+      justify-content: space-around;
     }
 
     .teacher {

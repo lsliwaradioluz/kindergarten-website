@@ -3,7 +3,7 @@
     <Landing />
     <About />
     <Events :events="events" />
-    <Schedules :schedules="schedules" carousel />
+    <Schedules :schedules="schedules" />
     <Gallery :galleries="galleries" main />
     <Teachers :teachers="teachers" blue >Poznaj naszych nauczycieli</Teachers>
     <Prices :prices="prices" showHeader />

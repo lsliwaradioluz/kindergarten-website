@@ -3,16 +3,18 @@
     <h1 class="events__header header-primary">
       Najbliższe wydarzenia
     </h1>
-    <div class="events__container box">
-      <div class="event" v-for="event in events" :key="event.id">
-        <div class="event__image">
+    <div class="events__container">
+      <Carousel :columns="[[768, 2], [1024, 3]]">
+        <div class="event" v-for="event in events" :key="event.id">
+          <div class="event__image" :style="{ backgroundImage: `url('${event.image.url}')`}">
+          </div>
+          <div class="event__content box">
+            <h2 class="event__content-header header-secondary">{{ event.name }}</h2>
+            <p class="event__content-date text"><i class="flaticon-clock"></i>{{ event.date | convertDate }}</p>
+            <p class="event__content-date text">{{ event.description }}</p>
+          </div>
         </div>
-        <div class="event__content box">
-          <h2 class="event__content-header header-secondary">{{ event.name }}</h2>
-          <p class="event__content-date text"><i class="flaticon-clock"></i>{{ event.date }}</p>
-          <p class="event__content-date text">{{ event.description }}</p>
-        </div>
-      </div>
+      </Carousel>
     </div>
   </div>
 </template>
@@ -20,6 +22,15 @@
 <script>
   export default {
     props: ['events'],
+    filters: {
+      convertDate(value) {
+        const months = ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień'];
+        const date = value.split('T')[0].split('-');
+        const month = parseInt(date[1]);
+        const day = date[2];
+        return day[0] == '0' ? `${day[1]} ${months[month -1]}` : `${day} ${months[month -1]}`
+      }
+    }
   }
 </script>
 
@@ -68,8 +79,7 @@
 
   .event {
     border-radius: 15px;
-    width: 100%;
-    max-width: 256px;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -80,7 +90,7 @@
     background-size: cover;
     background-position: center;
     width: 100%;
-    padding-top: 100%;
+    padding-top: 60%;
     border-top-right-radius: inherit;
     border-top-left-radius: inherit;
   }
@@ -117,12 +127,5 @@
     color: #FEB836;
     margin-right: 0.5rem;
     font-size: 1rem;
-  }
-
-  @media (min-width: 768px) {
-    .events__container {
-      padding-left: 20%;
-      padding-right: 20%;
-    }
   }
 </style>

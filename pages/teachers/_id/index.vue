@@ -2,8 +2,6 @@
   <div>
     <Head>{{ teacher.name }}</Head>
     <Teacher :teacher="teacher" />
-    <Internship />
-    <ContactForm />
     <Teachers :teachers="teachers" blue>Pozostali wychowawcy</Teachers>
   </div>
 </template>

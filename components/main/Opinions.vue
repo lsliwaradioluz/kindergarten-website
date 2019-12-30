@@ -55,6 +55,11 @@
     background-position: center;
   }
 
+  .opinion__image:nth-child(2),
+  .opinion__image:nth-child(3) {
+    display: none;
+  }
+
   .opinion__details-text {
     text-align: justify;
   }
@@ -105,7 +110,9 @@
       padding-top: 70%;
     }
 
-    .opinion__image:nth-child(2) {
+    .opinion__image:nth-child(2),
+    .opinion__image:nth-child(3) {
+      display: block;
       width: 15%;
       padding-top: 15%;
       position: absolute;
@@ -114,9 +121,6 @@
     }
 
     .opinion__image:nth-child(3) {
-      width: 15%;
-      padding-top: 15%;
-      position: absolute;
       top: 25%;
       right: 10%;
     }
