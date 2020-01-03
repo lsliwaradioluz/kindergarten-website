@@ -1,12 +1,12 @@
 <template>
   <div class="contacts main">
-    <div class="contacts__container box">
-      <div class="contact box" v-for="contact in contacts" :key="contact.id">
-        <div class="contact__icon icon">
+    <div class="contacts__container box column">
+      <div class="contact box column" v-for="contact in contacts" :key="contact.id">
+        <div class="icon">
           <i :class="assignIcon(contact.name)"></i>
         </div>
-        <h2 class="contact__header header-secondary">{{ contact.name }}</h2>
-        <p class="contact__text text" v-for="entry in contact.entries" :key="entry.id">{{ entry.entry }}</p>
+        <h2>{{ contact.name }}</h2>
+        <p v-for="entry in contact.entries" :key="entry.id">{{ entry.entry }}</p>
       </div>
     </div>
   </div>
@@ -34,12 +34,6 @@
 
 <style scoped>
 
-  .contacts__container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
   .contact {
     height: 17rem;
     width: 100%;
@@ -48,34 +42,26 @@
     padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 0 10px 2px #f2f2f2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
   }
 
-  .contact:nth-child(1) .contact__icon {
+  .contact:nth-child(1) .icon {
     background-color: #FA67BF;
   }
 
-  .contact:nth-child(2) .contact__icon {
+  .contact:nth-child(2) .icon {
     background-color: #FEB836;
   }
 
-  .contact:nth-child(3) .contact__icon {
+  .contact:nth-child(3) .icon {
     background-color: #05AA19;
   }
 
-  .contact__header {
-    margin-bottom: 1rem;
+  .contact h2 {
+    margin-bottom: 0.5rem;
   }
 
-  .contact__text {
+  .contact p {
     margin: 0;
-  }
-
-  [class*="flaticon-"]:before {
-    font-size: 40px;
   }
 
   @media (min-width: 1024px) {

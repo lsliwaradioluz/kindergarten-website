@@ -31,3 +31,7 @@
     transform: translateY(0);
   }
 }
+
+.fade-load-leave-active {
+  animation: fade 0.5s reverse;
+}

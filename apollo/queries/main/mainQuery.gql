@@ -9,7 +9,6 @@ query mainQuery {
   schedules {
     id
     day
-    name
     description
   }
   teachers {

@@ -1,5 +1,4 @@
 import webpack from 'webpack'
-require('dotenv').config()
 
 export default {
   mode: 'universal',
@@ -7,7 +6,7 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Akuku',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -17,20 +16,19 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  env: { 
-    environment: process.env.NODE_ENV
-  },
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: '~/components/Loading.vue',
   /*
   ** Global CSS
   */
   css: [
     '~/assets/styles/general.css',
-    '~/assets/styles/colors.css',
     '~/assets/styles/animations.css',
+    '~/assets/styles/layouts.css',
+    '~/assets/styles/elements.css',
+    '~/assets/styles/colors.css',
     '~/assets/icons/primary/flaticon.css',
   ],
   /*
@@ -51,7 +49,6 @@ export default {
     '@nuxtjs/apollo',
     '@nuxtjs/axios',
     '@nuxtjs/markdownit',
-    ['@nuxtjs/dotenv', { systemvars: true }],
   ],
   apollo: {  
     clientConfigs: {

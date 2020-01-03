@@ -1,33 +1,38 @@
 <template>
   <div class="footers main">
     <div class="footer">
-      <div class="footer__logo logo">
-      <span class="c-green">aku</span><span class="c-pink">ku</span>
+      <div class="logo">
+        <span class="c-green">aku</span><span class="c-pink">ku</span>
       </div>
-      <p class="footer__text text">Głównym celem naszej pracy jest dobro każdego maluszka, jego harmonijny i wszechstronny rozwój. Chcemy aby z nami czuło się szczęśliwe i bezpieczne.</p>
+      <p>Głównym celem naszej pracy jest dobro każdego maluszka, jego harmonijny i wszechstronny rozwój. Chcemy aby z nami czuło się szczęśliwe i bezpieczne.</p>
     </div>
     <div class="footer">
-      <h2 class="footer__header header-secondary">Przydatne linki</h2>
-      <nuxt-link to="/" class="text" tag="a">Strona Główna</nuxt-link>
-      <nuxt-link to="/catering" class="text" tag="a">Catering</nuxt-link>
-      <nuxt-link to="/teachers" class="text" tag="a">Wychowawcy</nuxt-link>
-      <nuxt-link to="/prices" class="text" tag="a">Cennik</nuxt-link>
-      <nuxt-link to="/contact" class="text" tag="a">Kontakt</nuxt-link>
+      <h2>Przydatne linki</h2>
+      <nuxt-link to="/" tag="a">Strona Główna</nuxt-link>
+      <nuxt-link to="/catering" tag="a">Catering</nuxt-link>
+      <nuxt-link to="/teachers" tag="a">Wychowawcy</nuxt-link>
+      <nuxt-link to="/prices" tag="a">Cennik</nuxt-link>
+      <nuxt-link to="/contact" tag="a">Kontakt</nuxt-link>
     </div>
     <div class="footer">
-      <h2 class="footer__header header-secondary">Dokumenty</h2>
-      <a href="" class="text">Formularz zapisowy</a>
-      <a href="" class="text">Regulamin</a>
-      <a href="" class="text">Statut</a>
+      <h2>Dokumenty</h2>
+      <a href="">Formularz zapisowy</a>
+      <a href="">Regulamin</a>
+      <a href="">Statut</a>
     </div>
     <div class="footer">
-      <h2 class="footer__header header-secondary">Skontaktuj się z nami</h2>
+      <h2>Skontaktuj się z nami</h2>
       <div v-for="footer in footers" :key="footer.id">
-        <h2 class="footer__subheader header-seconary">{{ footer.name }}</h2>
-        <component :is="footer.name == 'Telefon' ? 'a' : 'p'" class="footer__text text" v-for="entry in footer.entries" :key="entry.id" :href="`tel:${entry.entry}`">{{ entry.entry }}</component>
+        <h2 class="footer__subheader">{{ footer.name }}</h2>
+        <component 
+          :is="footer.name == 'Telefon' ? 'a' : 'p'" 
+          v-for="entry in footer.entries" 
+          :key="entry.id" 
+          :href="`tel:${entry.entry}`">{{ entry.entry }}</component>
       </div>
     </div>
-    <p class="footers__signature text">Website made with joy by Łukasz Śliwa. Icons made by Freepik from www.flaticon.com
+    <p class="footers__signature">
+      Website made with joy by Łukasz Śliwa. Icons made by Freepik from www.flaticon.com
     </p>
   </div>
 </template>
@@ -66,6 +71,7 @@
     height: 3rem;
     background-image: url('~assets/images/numbers-after.png');
     background-size: cover;
+    z-index: 2;
   }
 
   .footer {
@@ -75,24 +81,18 @@
   .footer a {
     display: block;
     text-align: left;
-    margin-bottom: 0;
-    margin-top: 0.5rem;
+    margin: 0.5rem 0;
   }
 
-  .text {
+  .footer p {
     text-align: left;
     margin: 0;
     padding-right: 2rem;
   }
 
-  .footer__header {
-    text-align: left;
-    margin-bottom: 1rem;
-  }
-
   .footer__subheader {
     font-size: 1rem;
-    margin-bottom: 0.5rem;
+    margin: 1rem 0 0.5rem 0;
   }
 
   .footers__signature {

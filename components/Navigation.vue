@@ -1,6 +1,6 @@
 <template>
   <div class="navigation main" :class="{ 'navigation-triggered': scroll }">
-    <div class="navigation__logo logo" is="nuxt-link" to="/">
+    <div class="logo" is="nuxt-link" to="/">
       aku<span class="c-yellow">ku</span>
     </div>
     <div class="navigation__hamburger" @click="showNav">
@@ -59,6 +59,11 @@
     z-index: 1000;
   }
 
+  .navigation .logo {
+    z-index: 998;
+    color: white;
+  }
+
   .navigation__hamburger {
     z-index: 1000;
   }
@@ -100,22 +105,18 @@
   }
 
   .navigation__link:hover, 
-  .navigation__link:active {
-    color: #FEB836;
-  }
-
+  .navigation__link:active,
   .nuxt-link-active {
     color: #FEB836;
   }
 
-  .navigation__logo {
-    z-index: 998;
-    color: white;
+  .toggled {
+    transform: translateY(0);
   }
 
   @media (min-width: 1024px) {
 
-    .navigation__logo {
+    .navigation .logo {
       width: 30%;
     }
 
@@ -153,9 +154,5 @@
       font-weight: 300;
       margin-left: 3%;
     }
-  }
-
-  .toggled {
-    transform: translateY(0);
   }
 </style>

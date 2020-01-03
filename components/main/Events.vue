@@ -1,17 +1,20 @@
 <template>
   <div class="events main">
-    <h1 class="events__header header-primary">
+    <h1 class="header-centered">
       Najbliższe wydarzenia
     </h1>
     <div class="events__container">
       <Carousel :columns="[[768, 2], [1024, 3]]">
-        <div class="event" v-for="event in events" :key="event.id">
+        <div class="event column" v-for="event in events" :key="event.id">
           <div class="event__image" :style="{ backgroundImage: `url('${event.image.url}')`}">
           </div>
           <div class="event__content box">
-            <h2 class="event__content-header header-secondary">{{ event.name }}</h2>
-            <p class="event__content-date text"><i class="flaticon-clock"></i>{{ event.date | convertDate }}</p>
-            <p class="event__content-date text">{{ event.description }}</p>
+            <h2>{{ event.name }}</h2>
+            <p>
+              <i class="flaticon-clock"></i>
+              {{ event.date | convertDate }}
+            </p>
+            <p>{{ event.description }}</p>
           </div>
         </div>
       </Carousel>
@@ -41,7 +44,8 @@
     position: relative;
   }
 
-  .events::before {
+  .events::before,
+  .events::after {
     content: "";
     background-image: url('~assets/images/before.png');
     background-size: contain;
@@ -53,40 +57,26 @@
   }
 
   .events::after {
-    content: "";
-    background-image: url('~assets/images/before.png');
-    background-size: contain;
-    width: 100%;
-    height: 1rem;
-    position: absolute;
+    top: initial;
     bottom: 0;
-    left: 0;
     transform: rotate(180deg);
   }
 
-  .events__header {
+  .events h1 {
     color: white;
   }
 
-  .events__header::after {
+  .events h1::after {
     text-decoration-color: white;
-  }
-
-  .events__container {
-    display: flex;
-    justify-content: center;
   }
 
   .event {
     border-radius: 15px;
     padding: 1rem;
-    display: flex;
-    flex-direction: column;
     align-items: flex-end;
   }
 
   .event__image {
-    background-image: url('https://images.unsplash.com/photo-1519340241574-2cec6aef0c01?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1789&q=80');
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -97,7 +87,7 @@
 
   .event__content {
     border-bottom-right-radius: inherit;
-    width: calc(100% - 1rem);
+    width: calc(100% - 0.5rem);
     background-color: white;
     position: relative;
     border: none;
@@ -107,18 +97,18 @@
     content: "";
     background-color: #FEB836;
     height: 100%;
-    width: 1rem;
+    width: 0.5rem;
     position: absolute;
-    left: -1rem;
+    left: -0.5rem;
     top: 0;
     border-bottom-left-radius: 15px;
   }
 
-  .event__content-header {
+  .event__content h2 {
     text-align: left;
   }
 
-  .text {
+  .event__content p {
     text-align: left;
     font-size: 0.9rem;
   }

@@ -1,14 +1,20 @@
 <template>
-  <div class="internship main">
-    <h1 class="internship__header header-primary">Studiujesz i chcesz odbyć praktyki?</h1>
-    <p class="internship__text text">W Akuku pomożemy Ci zdobyć Twoje pierwsze zawodowe doświadczenie. Jeśli chcesz rozpocząć pracę w charakterze opiekuna, masz odpowiednie kwalifikacje, chęć do nauki oraz dobre podejście do dzieci - zapewnimy Ci odpowiedni start!</p>
-    <button class="internship__button button-yellow" @click="$root.$emit('focusForm')">Aplikuj</button>
+  <div class="internship main centered">
+    <div class="internship__content column">
+      <h1 class="header-centered">Studiujesz i chcesz odbyć praktyki?</h1>
+      <p>W Akuku pomożemy Ci zdobyć Twoje pierwsze zawodowe doświadczenie. Jeśli chcesz rozpocząć pracę w charakterze opiekuna, masz odpowiednie kwalifikacje, chęć do nauki oraz dobre podejście do dzieci - zapewnimy Ci odpowiedni start!</p>
+      <button class="button b-yellow" @click="scroll" ref="button">Aplikuj</button>
+    </div>
   </div>
 </template>
 
 <script>
   export default {
-    
+    methods: {
+      scroll() {
+        this.$refs.button.scrollIntoView({ block: 'start', behavior: 'smooth' });
+      }
+    }
   }
 </script>
 
@@ -19,10 +25,6 @@
     background-size: cover;
     background-position: center;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     padding-top: 4rem;
     padding-bottom: 4rem;
   }
@@ -45,34 +47,40 @@
     transform: rotate(180deg);
   }
 
-  .internship__header {
+  .internship h1 {
     color: white;
     margin: 0;
   }
 
-  .internship__header::after {
+  .internship h1::after {
     display: none;
   }
 
-  .internship__text {
-    z-index: 1;
+  .internship p {
+    text-align: center;
     color: white;
     font-size: 0.9rem;
-  }
-  
-  .internship__button {
-    z-index: 1;
   }
 
   @media (min-width: 768px) {
     .internship {
-      padding: 4rem 25%;
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .internship__content {
+      width: 80%;
     }
   }
 
   @media (min-width: 1024px) {
     .internship {
-      padding: 8rem 25%;
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+
+    .internship__content {
+      width: 60%;
     }
   }
 </style>

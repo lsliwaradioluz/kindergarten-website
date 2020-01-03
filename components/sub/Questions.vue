@@ -1,6 +1,6 @@
 <template>
-  <div class="questions main">
-    <div class="question box" v-for="(question, index) in questions" :key="question.id">
+  <div class="questions main column">
+    <div class="question box column" v-for="(question, index) in questions" :key="question.id">
       <div class="question__number">
         <h1 class="header-primary">{{ index + 1 | addZero }}</h1>
       </div>
@@ -28,18 +28,6 @@ export default {
 </script>
 
 <style scoped>
-
-  .questions {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .question {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
 
   .question__number {
     padding: 1rem;

@@ -1,6 +1,8 @@
 <template>
-  <div class="head main">
-    <h1 class="head__header header-primary"><slot></slot></h1>
+  <div class="head main centered">
+    <h1 class="header-centered">
+      <slot></slot>
+    </h1>
   </div>
 </template>
 
@@ -15,9 +17,6 @@
     background-image: url('~assets/images/background-head.png');
     background-size: cover;
     background-position: center right;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     height: 50vh;
     position: relative;
   }
@@ -34,12 +33,12 @@
     height: 2rem;
   }
 
-  .head__header {
+  .head h1 {
     color: white;
     margin: 0;
   }
 
-  .head__header::after {
+  .head h1::after {
     text-decoration-color: #FEB836;
   }
 </style>

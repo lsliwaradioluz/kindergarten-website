@@ -1,9 +1,11 @@
 <template>
-  <div class="teacher main">
-    <div class="teacher__image box" :style="{ backgroundImage: `url('${teacher.image.url}')`}"></div>
-    <div class="teacher__description box">
-      <h1 class="teacher__description-header header-primary">O mnie</h1>
-      <div class="teacher__description-text text">{{ teacher.description }}</div>
+  <div class="teacher main column">
+    <div class="teacher__container">
+      <div class="teacher__image" :style="{ backgroundImage: `url('${teacher.image.url}')`}"></div>
+      <div class="teacher__description">
+        <h1>O mnie</h1>
+        <p>{{ teacher.description }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -16,45 +18,53 @@
 
 <style scoped>
 
-  .teacher {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .teacher__container {
+    max-width: 256px;
   }
 
   .teacher__image {
     background-size: cover;
     background-position: center;
-    height: 60vh;
-    width: 90%;
+    padding-top: 130%;
+    width: 100%;
   }
 
-  .teacher__description-text {
+  .teacher__description h1 {
+    text-align: center;
+  }
+
+  .teacher__description h1::after {
+    text-align: center;
+    left: 25%;
+  }
+
+  .teacher__description p {
     text-align: justify;
   }
 
   @media (min-width: 1024px) {
-    .teacher {
-      flex-direction: row;
-      align-items: flex-start;
-    }
 
-    .teacher__image {
-      width: 40%;
+    .teacher__container {
+      display: flex;
+      max-width: initial;
+      padding-top: 4rem;
+      padding-bottom: 4rem;
     }
 
     .teacher__description {
-      width: 60%;
-    }
-    
-    .teacher__description-header {
-      text-align: left;
-      margin-top: 0;
+      padding-left: 2rem;
+      width: 70%;
     }
 
-    .teacher__description-header::after {
+    .teacher__description h1,
+    .teacher__description h1::after {
       text-align: left;
       left: 0;
+    }
+
+    .teacher__image {
+      width: 30%;
+      padding-top: 30%;
     }
   }
 </style>

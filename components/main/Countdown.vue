@@ -1,11 +1,11 @@
 <template>
-  <div class="countdowns main" :class="{ 'background-green': sub, 'background-blue': main }">
-    <h1 class="countdowns__header header-primary">{{ closestEvent.name }} za:</h1>
-    <div class="countdowns__container">
+  <div class="countdowns main column" :class="{ 'background-green': sub, 'background-blue': main }">
+    <h1 class="countdowns__header header-centered">{{ closestEvent.name }} za:</h1>
+    <div class="countdowns__container column">
       <div class="countdown" v-for="(time, key) in timeLeft" :key="key">
-        <div class="countdown__content">
-          <h1 class="countdown__content-header header-primary">{{ time }}</h1>
-          <span class="countdown__content-subheader">{{ key | englishToPolish }}</span>
+        <div class="countdown__content column">
+          <h1 class="countdown__content__header">{{ time }}</h1>
+          <span class="countdown__content__subheader">{{ key | englishToPolish }}</span>
         </div>
       </div>
     </div>
@@ -22,18 +22,18 @@
     data() {
       return {
         difference: 0, 
-        date: new Date().toISOString()
+        today: new Date()
       }
     },
     computed: {
       closestEvent() {
-        const eventsAhead = this.events.filter(event => {
-          return event.date.replace(/\D/g,'') > this.date.replace(/\D/g,'');
+        const upcomingEvents = this.events.filter(event => {
+          return event.date.replace(/\D/g,'') > this.today.toISOString().replace(/\D/g,'');
         });
-        const sortedEvents = eventsAhead.sort((a, b) => {
+        const sortedUpcomingEvents = upcomingEvents.sort((a, b) => {
           return a.date.replace(/\D/g,'') - b.date.replace(/\D/g,'');
         });
-        return sortedEvents[0];
+        return sortedUpcomingEvents[0];
       },
       timeLeft() {
         const singleDay = 1000 * 60 * 60 * 24;
@@ -59,8 +59,7 @@
         let newDate = this.closestEvent.date.split('-').join(',').split('T').join(',').split('Z').join(',').split(':').join(',').split(',');
         newDate[1] -= 1;
         newDate = new Date(...newDate);
-        const today = new Date();
-        this.difference = Math.abs(newDate - today);
+        this.difference = Math.abs(newDate - this.today);
         setInterval(() => {
           this.difference -= 1000;
         }, 1000);
@@ -97,15 +96,10 @@
     background-position: center;
     position: relative;
     padding-bottom: 5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
   }
 
   .countdowns__header {
     color: white;
-    z-index: 1;
     font-size: 2rem;
     line-height: 2.5rem;
   }
@@ -115,19 +109,13 @@
   }
 
   .countdowns__container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 288px;
+    width: 70%;
+    max-width: 150px;
   }
 
   .countdown {
-    width: 70%;
-    padding-top: 70%;
-    z-index: 10;
-    display: flex;
+    width: 100%;
+    padding-top: 100%;
     border-radius: 25px;
     text-align: center;
     margin-bottom: 2rem;
@@ -140,22 +128,18 @@
     position: absolute;
     top: 0;
     left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
   }
 
-  .countdown__content-header {
+  .countdown__content__header {
     color: white;
     margin: 0 0 0.5rem 0;
   }
 
-  .countdown__content-header::after {
+  .countdown__content__header::after {
     display: none;
   }
 
-  .countdown__content-subheader {
+  .countdown__content__subheader {
     color: white;
     font-weight: 700;
     font-size: 0.9rem;
@@ -175,28 +159,6 @@
 
   .countdown:nth-child(4) {
     background-color: #05AA19;
-  }
-
-  .background-green {
-    background-image: url('~assets/images/background-green.png');
-  }
-
-  .background-green::before {
-    content: "";
-    background-image: url('~assets/images/before.png');
-    background-size: cover;
-    width: 100%;
-    height: 1rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
-  .background-blue {
-    background-image: 
-      linear-gradient(rgba(88, 112, 247, 0.911), rgba(88, 112, 247, 0.911)),
-      url('https://images.unsplash.com/photo-1540479859555-17af45c78602?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
-    background-attachment: fixed;
   }
 
   @media (min-width: 768px) {
@@ -224,5 +186,16 @@
     .countdown {
       width: 100%;
     }
+  }
+
+  .background-green {
+    background-image: url('~assets/images/background-green.png');
+  }
+
+  .background-blue {
+    background-image: 
+      linear-gradient(rgba(88, 112, 247, 0.911), rgba(88, 112, 247, 0.911)),
+      url('https://images.unsplash.com/photo-1540479859555-17af45c78602?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
+    background-attachment: fixed;
   }
 </style>

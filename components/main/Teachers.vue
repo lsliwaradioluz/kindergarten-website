@@ -1,16 +1,14 @@
 <template>
   <div class="teachers main" :class="{ 'background-blue': blue }">
-    <h1 class="teachers-header header-primary" v-if="blue">
+    <h1 class="header-centered" v-if="blue">
       <slot></slot>
     </h1>
-    <div class="teachers-container box">
+    <div class="teachers__container box column">
       <div class="teacher" v-for="teacher in filteredTeachers" :key="teacher.id" is="nuxt-link" :to="`/teachers/${teacher.id}`">
-        <div class="teacher__image" :style="{ backgroundImage: `url('${teacher.image.url}')` }" >
-          <div class="teacher__image-overlay"></div>
-        </div>
+        <div class="teacher__image" :style="{ backgroundImage: `url('${teacher.image.url}')` }"></div>
         <div class="teacher__details box">
-          <h2 class="teacher__details-header header-secondary">{{ teacher.name }}</h2>
-          <p class="teacher__details-text text">{{ teacher.caption }}</p>
+          <h2>{{ teacher.name }}</h2>
+          <p>{{ teacher.caption }}</p>
         </div>
       </div>
     </div>
@@ -53,23 +51,17 @@
     z-index: -1;
   }
 
-  .background-blue .teachers-header {
+  .teachers h1 {
+    margin-top: 4rem;
     color: white;
   }
 
-  .background-blue .teachers-header::after {
+  .teachers h1::after {
     text-decoration-color: white;
   }
 
-  .teachers-header {
-    margin-top: 4rem;
-  }
-
-  .teachers-container {
+  .teachers__container {
     padding-top: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
   .teacher {
@@ -85,8 +77,9 @@
     background-position: center;
     position: relative;
   }
-
-  .teacher__image-overlay {
+  
+  .teacher__image::after {
+    content: "";
     width: 100%;
     height: 100%;
     position: absolute;
@@ -95,13 +88,18 @@
     transition: background-color 0.3s;
   }
 
-  .teacher:hover .teacher__image-overlay {
+  .teacher:hover .teacher__image::after {
     background-color: rgba(77, 100, 249, 0.158);
   }
 
-  .teacher__details-text {
+  .teacher__details h2 {
+    text-align: center;
+  }
+
+  .teacher__details p {
     margin-top: 0.2rem;
     font-size: 0.9rem;
+    text-align: center;
   }
 
   @media (min-width: 768px) {
@@ -121,7 +119,7 @@
       height: 40vw;
     }
 
-    .teachers-container {
+    .teachers__container {
       flex-direction: row;
       align-items: flex-start;
       justify-content: space-around;

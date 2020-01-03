@@ -1,16 +1,16 @@
 <template>
   <div class="gallery main">
-    <h1 class="gallery__header header-primary" v-if="main">Galeria</h1>
+    <h1 class="header-centered" v-if="main">Galeria</h1>
     <div class="gallery__buttons" v-if="!main">
       <button 
-        class="gallery__button button-transparent"
+        class="button"
         :class="{ 'button-active' : current == index }" 
         v-for="(gallery, index) in galleries" 
         :key="gallery.id" 
         @click="displayGallery(index)">{{ gallery.name }}</button>
     </div>
     <transition name="fade" mode="out-in">
-      <div class="gallery__images" :key="current" ref="images">
+      <div class="gallery__images column" :key="current" ref="images">
         <div 
           class="gallery__image" 
           :class="{ 'main-class': main }" 
@@ -24,7 +24,6 @@
 </template>
 
 <script>
-
   export default {
     props: {
       galleries: Array, 
@@ -51,7 +50,7 @@
     padding-bottom: 6rem;
   }
 
-  .gallery__header {
+  .gallery h1 {
     margin-top: 0;
   }
 
@@ -63,34 +62,35 @@
     width: 100%;
   }
 
-  .gallery__button {
+  .button {
     color: rgb(117, 133, 158);
     border: 0.5px solid rgb(212, 212, 212);
+    background-color: transparent;
     font-weight: 500;
     width: 45%;
     margin: 0.5rem;
   }
 
-  .gallery__images {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .button-active {
+    background-color: #05AA19;
+    color: white;
+    border: none;
   }
 
   .gallery__image {
-    width: 80vw;
-    height: 80vw;
+    width: 100%;
+    padding-top: 100%;
     background-size: cover;
     background-position: center;
     border: 10px solid white;
     margin: 0.5rem 0;
     box-shadow: 0 0 10px rgb(192, 192, 192);
-    position: relative;
   }
 
   .last {
     background-image: url('~assets/images/kids.jpg');
     cursor: pointer;
+    position: relative;
   }
 
   .last::after {
@@ -108,17 +108,11 @@
     font-weight: 500;
     font-family: 'Baloo', cursive;
     background-color: rgba(5, 170, 24, 0.849);
-    transition: all 0.3s;
+    transition: background-color 0.3s;
   }
 
   .last:hover::after {
     background-color: rgba(3, 143, 20, 0.849);  
-  }
-
-  .button-active {
-    background-color: #05AA19;
-    color: white;
-    border: none;
   }
 
   @media (min-width: 768px) {
@@ -130,9 +124,6 @@
     }
 
     .gallery__image {
-      width: 100%;
-      height: 0;
-      padding-top: 100%;
       margin: 0;
     }
 
@@ -140,7 +131,7 @@
       justify-content: center;
     }
 
-    .gallery__button {
+    .button {
       width: auto;
     }
   }

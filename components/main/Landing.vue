@@ -1,20 +1,14 @@
 <template>
   <div class="landing main">
     <div class="landing__content">
-      <div class="landing__content-header">
-        <h1 class="header-primary">Dobro maluszka na pierwszym miejscu</h1>
-      </div>
-      <div class="landing__content-text">
-        <p>W żłobku Akuku dbamy o harmonijmy rozwój dzieci. Chcemy, by z nami czuły się szczęsliwe i bezpieczne!</p>
-      </div>
-      <div class="landing__content-buttons">
-        <a href="tel:576139837" class="landing__content-button button-yellow">Zadzwoń</a>
-        <button class="landing__content-button button-transparent" @click="$emit('scroll')">O nas</button>
+      <h1>Dobro maluszka na pierwszym miejscu</h1>
+      <p>W żłobku Akuku dbamy o harmonijmy rozwój dzieci. Chcemy, by z nami czuły się szczęsliwe i bezpieczne!</p>
+      <div class="landing__content__buttons">
+        <a class="button b-yellow" href="tel:576139837">Zadzwoń</a>
+        <button class="button" @click="$emit('scroll')">O nas</button>
       </div>
     </div>
-    <div class="landing__image">
-
-    </div>
+    <div class="landing__image"></div>
   </div>  
 </template> 
 
@@ -33,37 +27,42 @@
     background-image: url('~assets/images/background-blue.png');
     background-size: cover;
     background-position: right bottom;
-    color: rgb(80, 69, 69);
     display: flex;
     align-items: center;
   }
 
-  .header-primary {
+  .landing__content h1 {
     color: white;
-    text-align: left;
     margin-bottom: 1rem;
     margin-top: 0;
   }
 
-  .header-primary::after {
+  .landing__content h1::after {
     display: none;
   }
 
-  .landing__content-text p {
+  .landing p {
     color: white;
   }
 
-  .landing__content-buttons {
+  .landing__content__buttons {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
-  }
-
-  .landing__content-button {
-    margin-right: 0.5rem;
   }
   
-  .button-yellow {
+  .button:first-child {
+    color: black;
+    margin-right: 0.5rem;
+  }
+
+  .button:nth-child(2) {
+    background-color: transparent;
+    border: 1px solid white;
+  }
+
+  .button:nth-child(2):hover,
+  .button:nth-child(2):active {
+    background-color: white;
     color: black;
   }
 
@@ -80,7 +79,7 @@
 
   @media (min-width: 1024px) {
 
-    .header-primary {
+    .landing__content h1 {
       font-size: 3.5rem;
       line-height: 3rem;
     }

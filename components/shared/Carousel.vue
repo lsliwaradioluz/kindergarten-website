@@ -198,6 +198,7 @@
   .carousel-wrapper {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     padding-top: 2rem;
     cursor: grab;
   }

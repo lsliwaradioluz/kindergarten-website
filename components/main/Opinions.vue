@@ -1,17 +1,17 @@
 <template>
   <div class="opinions main">
-    <h1 class="opinions-header header-primary">Co mówią rodzice</h1>
+    <h1 class="header-centered">Co mówią rodzice</h1>
     <Carousel>
-      <div class="opinion box" v-for="opinion in opinions" :key="opinion.id" ref="opinion">
+      <div class="opinion box column" v-for="opinion in opinions" :key="opinion.id">
         <div class="opinion__images">
           <div class="opinion__image" :style="{ backgroundImage: `url('${opinion.image.url}')`}"></div>
           <div class="opinion__image" :style="{ backgroundImage: `url('${getSmallImages(opinion.id, 0)}')`}"></div>
           <div class="opinion__image" :style="{ backgroundImage: `url('${getSmallImages(opinion.id, 1)}')`}"></div>
         </div>
         <div class="opinion__details">
-          <p class="opinion__details-text text">{{ opinion.body }}</p>
-          <h2 class="opinion__details-caption header-secondary">{{ opinion.name }}</h2>
-          <p class="opinion__details-subcaption text">{{ opinion.caption }}</p>
+          <p class="opinion__details__body">{{ opinion.body }}</p>
+          <h2 class="opinion__details__caption">{{ opinion.name }}</h2>
+          <p class="opinion__details__caption">{{ opinion.caption }}</p>
         </div>
       </div>
     </Carousel>
@@ -34,12 +34,6 @@
 
 <style scoped>
 
-  .opinion {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
   .opinion__images {
     width: 100%;
     display: flex;
@@ -60,17 +54,13 @@
     display: none;
   }
 
-  .opinion__details-text {
+  .opinion__details__body {
     text-align: justify;
   }
 
-  .opinion__details-caption {
+  .opinion__details__caption {
     text-align: right;
-  }
-
-  .opinion__details-subcaption {
     margin-top: 0;
-    text-align: right;
   }
 
   @media (min-width: 768px) {
@@ -87,17 +77,15 @@
 
   @media (min-width: 1024px) {
     
-    .opinions-header, 
-    .opinions-header::after {
+    .opinions h1, 
+    .opinions h1::after {
       text-align: left;
       left: 0;
     }
 
     .opinion {
       flex-direction: row;
-      padding: 0;
     }
-
 
     .opinion__images {
       width: 50%;
