@@ -5,16 +5,21 @@
       <p>W żłobku Akuku dbamy o harmonijmy rozwój dzieci. Chcemy, by z nami czuły się szczęsliwe i bezpieczne!</p>
       <div class="landing__content__buttons">
         <a class="button b-yellow" href="tel:576139837">Zadzwoń</a>
-        <button class="button" @click="$emit('scroll')">O nas</button>
+        <button class="button" @click="scroll">O nas</button>
       </div>
     </div>
     <div class="landing__image"></div>
+    <div class="landing__anchor" ref="anchor"></div>
   </div>  
 </template> 
 
 <script>
   export default {
-    
+    methods: {
+      scroll() {
+        this.$refs.anchor.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   }
 </script>
 
@@ -68,6 +73,11 @@
 
   .landing__image {
     display: none;
+  }
+
+  .landing__anchor {
+    position: absolute;
+    bottom: 5rem;
   }
 
   @media (min-width: 768px) {

@@ -24,7 +24,7 @@
     data() {
       return {
         form: {
-          to: 'lsliwaradioluz@gmail.com',
+          to: 'osmalekk@gmail.com',
           from: '',
           subject: '',
           text: ''
