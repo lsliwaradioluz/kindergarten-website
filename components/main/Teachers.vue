@@ -43,7 +43,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    height: 70vh;
+    height: 35rem;
     width: 100%;
     background-image: url('~assets/images/background-blue-bus.png');
     background-size: cover;
@@ -102,21 +102,10 @@
     text-align: center;
   }
 
-  @media (min-width: 768px) {
-
-    .background-blue::after {
-      height: 60vh;
-    }
-  }
-
   @media (min-width: 1024px) {
 
     .teachers {
       padding-top: 15vw;
-    }
-    
-    .background-blue::after {
-      height: 40vw;
     }
 
     .teachers__container {

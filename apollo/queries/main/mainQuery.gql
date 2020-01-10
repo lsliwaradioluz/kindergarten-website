@@ -28,7 +28,7 @@ query mainQuery {
       entry
     }
   }
-  events {
+  events(sort: "date:desc") {
     id
     name
     date

@@ -1,0 +1,9 @@
+query documentsQuery {
+  documents {
+    id
+    name 
+    file {
+      url
+    }
+  }
+}

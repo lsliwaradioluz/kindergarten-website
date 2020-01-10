@@ -22,10 +22,19 @@
     data() {
       return {
         difference: 0, 
-        today: new Date()
+        today: new Date(),
       }
     },
     computed: {
+      replacementEvent() {
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        tomorrow.setHours(1, 0, 0, 0);
+        return {
+          name: 'Nowy dzień',
+          date: tomorrow.toISOString()
+        }
+      },
       closestEvent() {
         const upcomingEvents = this.events.filter(event => {
           return event.date.replace(/\D/g,'') > this.today.toISOString().replace(/\D/g,'');
@@ -33,7 +42,7 @@
         const sortedUpcomingEvents = upcomingEvents.sort((a, b) => {
           return a.date.replace(/\D/g,'') - b.date.replace(/\D/g,'');
         });
-        return sortedUpcomingEvents[0];
+        return sortedUpcomingEvents[0] ? sortedUpcomingEvents[0] : this.replacementEvent;
       },
       timeLeft() {
         const singleDay = 1000 * 60 * 60 * 24;
@@ -46,12 +55,7 @@
         const minutes = Math.floor(this.difference % singleDay % singleHour / singleMinute);
         const seconds = Math.floor(this.difference % singleDay % singleHour % singleMinute / singleSecond);
 
-        return {
-          days: days, 
-          hours: hours, 
-          minutes: minutes, 
-          seconds: seconds
-        }
+        return days == 0 ? { hours: hours, minutes: minutes, seconds: seconds} : { days: days, hours: hours, minutes: minutes, seconds: seconds}
       }
     }, 
     methods: {
@@ -162,29 +166,24 @@
   }
 
   @media (min-width: 768px) {
-
     .countdowns__container {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-gap: 2rem;
+      flex-direction: row;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      max-width: 1000px;
     }
 
     .countdown {
-      width: 100%;
-      padding-top: 100%;
+      flex-basis: 45%;
+      padding-top: 45%;
     }
   }
 
   @media (min-width: 1024px) {
-    
-    .countdowns__container {
-      grid-template-columns: repeat(4, 1fr);
-      max-width: 600px;
-      width: 80%;
-    }
 
     .countdown {
-      width: 100%;
+      flex-basis: 17%;
+      padding-top: 17%;
     }
   }
 

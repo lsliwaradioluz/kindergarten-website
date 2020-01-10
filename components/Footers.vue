@@ -16,9 +16,7 @@
     </div>
     <div class="footer">
       <h2>Dokumenty</h2>
-      <a href="">Formularz zapisowy</a>
-      <a href="">Regulamin</a>
-      <a href="">Statut</a>
+      <a v-for="document in documents" :key="document.id" :href="document.file.url">{{ document.name }}</a>
     </div>
     <div class="footer">
       <h2>Skontaktuj się z nami</h2>
@@ -38,6 +36,7 @@
 </template>
 
 <script>
+  import documentsQuery from '~/apollo/queries/footer/documentsQuery'
   import footersQuery from '~/apollo/queries/footer/footersQuery'
 
   export default {
@@ -45,6 +44,10 @@
       footers: {
         prefetch: true, 
         query: footersQuery
+      },
+      documents: {
+        prefetch: true, 
+        query: documentsQuery
       }
     }
   }

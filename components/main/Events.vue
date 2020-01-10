@@ -70,6 +70,11 @@
     text-decoration-color: white;
   }
 
+  .events__container {
+    display: flex;
+    align-items: stretch;
+  }
+
   .event {
     border-radius: 15px;
     padding: 1rem;
@@ -91,6 +96,7 @@
     background-color: white;
     position: relative;
     border: none;
+    height: 100%;
   }
 
   .event__content::before {

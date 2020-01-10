@@ -1,6 +1,6 @@
 <template>
   <div class="carousel">
-    <div class="carousel-navdots" v-if="isActive">
+    <div class="carousel-navdots" v-if="isActive" v-show="pagination">
       <div 
         class="carousel-navdot" 
         :class="{ 'active': n == currentPage + 1 }" 
@@ -11,7 +11,7 @@
         @click="scrollWithNavdots(n)"></div>
     </div>
     <div 
-      class="carousel-wrapper"
+      class="carousel-wrapper a-stretch"
       :class="{ 'inactive': !isActive }"
       ref="wrapper" 
       v-on="isActive ? { touchstart: onTouchStart, touchmove: onTouchMove, touchend: onTouchEnd, mousedown: onTouchStart, mousemove: onTouchMove, mouseup: onTouchEnd } : {}">
@@ -30,6 +30,10 @@
       columns: { 
         type: Array,
         default: () => [[1, 1]]
+      }, 
+      pagination: {
+        type: Boolean, 
+        default: () => true
       }
     },
     data() {
@@ -148,11 +152,16 @@
         }
       },
       setActive() {
-        this.sortedActive.forEach(cur => {
-          if (window.matchMedia(`(min-width: ${cur[0]}px)`).matches) {
-            this.isActive = cur[1];
-          }
-        });
+        if (this.numberOfPages > 1) {
+          this.sortedActive.forEach(cur => {
+            if (window.matchMedia(`(min-width: ${cur[0]}px)`).matches) {
+              this.isActive = cur[1];
+            }
+          });
+        } else {
+          this.isActive = false;
+        }
+        
       }
     },
     mounted() {
@@ -179,6 +188,7 @@
   .carousel-navdots {
     display: flex;
     justify-content: center;
+    margin-bottom: 2rem; 
   }
 
   .carousel-navdot {
@@ -197,9 +207,7 @@
 
   .carousel-wrapper {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding-top: 2rem;
+    align-items: stretch;
     cursor: grab;
   }
 
@@ -219,6 +227,11 @@
 
   .inactive {
     flex-direction: column;
+    cursor: initial;
+  }
+
+  .inactive:active {
+    cursor: initial;
   }
 
   @media (min-width: 1024px) {
