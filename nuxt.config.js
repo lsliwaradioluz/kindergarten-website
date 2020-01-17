@@ -66,6 +66,12 @@ export default {
     injected: true, 
     typographer: true
   },
+  sitemap: {
+    path: '/sitemap.xml',
+    cacheTime: 1000 * 60 * 60 * 2,
+    trailingSlash: true,
+    gzip: true
+  },
   /*
   ** Build configuration
   */
