@@ -49,6 +49,7 @@ export default {
     '@nuxtjs/apollo',
     '@nuxtjs/axios',
     '@nuxtjs/markdownit',
+    '@nuxtjs/sitemap'
   ],
   apollo: {  
     clientConfigs: {
