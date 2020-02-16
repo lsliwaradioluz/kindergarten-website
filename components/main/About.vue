@@ -25,15 +25,7 @@
       </div>
     </div>
     <div class="about__details box">
-      <div class="about__details__text">
-        <h1>Zapisy</h1>
-        <p>Do żłobka Akuku dzieci przyjmowane są przez cały rok, w zależności od wolnych miejsc. Aby ułatwić proces rezerwacji miejsca, osoby zainteresowane prosimy o:</p>
-        <ul>
-          <li>Wypełnienie formularza zgłoszeniowego, będącego gwarancją rezerwacji miejsca</li>
-          <li>Odesłanie go na adres mailowy</li>
-          <li>Uiszczenie opłaty wpisowej w wysokości 39 złotych</li>
-        </ul>
-      </div>
+      <div class="about__details__text" v-html="$md.render(about.content)"></div>
       <div class="about__details__image"></div>
     </div>
   </div>
@@ -41,7 +33,7 @@
 
 <script>
 export default {
-  
+  props: ['about']
 };
 </script>
 

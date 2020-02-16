@@ -1,5 +1,6 @@
 query cateringQuery {
   other(id: "5df7f1bfcf1162405057c517") {
+    id
     name
     content
   }

@@ -1,7 +1,7 @@
 <template>
   <div>
     <Landing />
-    <About />
+    <About :about="about" />
     <Events :events="events" />
     <Schedules :schedules="schedules" />
     <Gallery :galleries="galleries" main />
@@ -49,7 +49,8 @@ export default {
           teachers: data.teachers, 
           prices: data.prices, 
           events: data.events, 
-          opinions: data.opinions
+          opinions: data.opinions, 
+          about: data.others[0]
         }
       });
   }

@@ -1,4 +1,8 @@
 query mainQuery {
+  others(where: { name: "Registration" }) {
+    id
+    content
+  }
   galleries(sort: "createdAt:asc") {
     name
     id
