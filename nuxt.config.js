@@ -7,10 +7,12 @@ export default {
   */
   head: {
     title: 'Akuku | Nowy niepubliczny żłobek we Wrocławiu',
+    htmlAttrs: {
+      lang: 'pl-PL',
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { 'http-equiv': 'Content-Language', content: 'pl-PL' },
       { 
         hid: 'description', 
         name: 'description', 
