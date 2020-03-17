@@ -6,7 +6,7 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: 'Akuku: nowy niepubliczny żłobek we Wrocławiu',
+    title: 'Akuku | Nowy niepubliczny żłobek we Wrocławiu',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
