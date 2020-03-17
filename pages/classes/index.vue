@@ -17,11 +17,6 @@
       Schedules,
       Countdown
     },
-    head() {
-      return {
-        title: 'Akuku | Zajęcia'
-      }
-    },
     asyncData(context) {
       let client = context.app.apolloProvider.defaultClient;
       return client.query({ query: classesQuery })
