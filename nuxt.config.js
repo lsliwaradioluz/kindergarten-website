@@ -6,11 +6,14 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: 'Akuku Wrocław: nowy niepubliczny żłobek',
+    title: 'Akuku: nowy niepubliczny żłobek we Wrocławiu',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { 
+        hid: 'description', 
+        name: 'description', 
+        content: 'Mieszkasz w zachodniej części Wrocławia i szukasz kompleksowej opieki dla swojego malucha? W naszym żłobku zadbamy o jego harmonijny rozwój! Odwiedź nas i przekonaj się, że wszędzie dobrze, ale w Akuku najlepiej.' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
