@@ -17,6 +17,11 @@
       Contact,
       ContactForm
     },
+    head() {
+      return {
+        title: 'Akuku | Kontakt'
+      }
+    },
     asyncData(context) {
       let client = context.app.apolloProvider.defaultClient;
       return client.query({ query: footersQuery })
