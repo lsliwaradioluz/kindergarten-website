@@ -1,12 +1,12 @@
 <template>
   <div class="prices main">
-    <h1 class="header-centered" v-if="showHeader">Cennik</h1>
+    <h2 class="header-centered" v-if="showHeader">Cennik</h2>
     <div class="prices__container box column">
       <div class="price box column" v-for="price in prices" :key="price.id">
       <div class="icon">
         <span>{{ price.price }}</span>
       </div>
-      <h2>{{ price.name }}</h2>
+      <h3>{{ price.name }}</h3>
       <p v-for="entry in price.entries" :key="entry.id">{{ entry.entry }}</p>
       <nuxt-link 
         class="button" 
@@ -28,7 +28,7 @@ export default {
 
 <style scoped>
 
-  .prices h1 {
+  .prices h2 {
     margin-top: 0;
   }
 
@@ -59,7 +59,7 @@ export default {
     z-index: 10;
   }
 
-  .price h2 {
+  .price h3 {
     margin-bottom: 1rem;
     text-align: center;
   }

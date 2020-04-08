@@ -1,10 +1,10 @@
 <template>
   <div class="countdowns main column" :class="{ 'background-green': sub, 'background-blue': main }">
-    <h1 class="countdowns__header header-centered">{{ closestEvent.name }} za:</h1>
+    <h2 class="countdowns__header header-centered">{{ closestEvent.name }} za:</h2>
     <div class="countdowns__container column">
       <div class="countdown" v-for="(time, key) in timeLeft" :key="key">
         <div class="countdown__content column">
-          <h1 class="countdown__content__header">{{ time }}</h1>
+          <h2 class="countdown__content__header">{{ time }}</h2>
           <span class="countdown__content__subheader">{{ key | englishToPolish }}</span>
         </div>
       </div>

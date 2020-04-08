@@ -1,6 +1,6 @@
 <template>
   <div class="opinions main">
-    <h1 class="header-centered">Co mówią rodzice</h1>
+    <h2 class="header-centered">Co mówią rodzice</h2>
     <Carousel>
       <div class="opinion box column" v-for="opinion in opinions" :key="opinion.id">
         <div class="opinion__images">
@@ -10,7 +10,7 @@
         </div>
         <div class="opinion__details">
           <p class="opinion__details__body">{{ opinion.body }}</p>
-          <h2 class="opinion__details__caption">{{ opinion.name }}</h2>
+          <h3 class="opinion__details__caption">{{ opinion.name }}</h3>
           <p class="opinion__details__caption">{{ opinion.caption }}</p>
         </div>
       </div>
@@ -77,8 +77,8 @@
 
   @media (min-width: 1024px) {
     
-    .opinions h1, 
-    .opinions h1::after {
+    .opinions h2, 
+    .opinions h2::after {
       text-align: left;
       left: 0;
     }

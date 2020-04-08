@@ -1,26 +1,26 @@
 <template>
   <div class="about main" ref="about">
-    <h1 class="header-centered">W Akuku dzieci czują się jak w domu</h1>
+    <h2 class="header-centered">W Akuku dzieci czują się jak w domu</h2>
     <div class="about__facilities column">
       <div class="about__facility box column">
         <div class="icon b-green">
           <i class="flaticon-shield"></i>
         </div>
-        <h2>Spokojny start</h2>
+        <h3>Spokojny start</h3>
         <p>Wiedząc jak ważne dla harmonijnego rozwoju dziecka jest jego poczucie bezpieczeństwa, proponujemy rodzicom stopniowe wprowadzanie maluszka w świat żłobkowy w miarę możliwości czasowych rodziców.</p>
       </div>
       <div class="about__facility box column">
         <div class="icon b-yellow">
           <i class="flaticon-teacher"></i>
         </div>
-        <h2>Wychowawcy</h2>
+        <h3>Wychowawcy</h3>
         <p>W żłobku „A Kuku” nie pracują „panie”, „wychowawczynie” czy „nauczycielki”. Tutaj Waszym dzieckiem opiekują się po prostu ciocie. Chcemy, aby dzieci czuły się w naszym żłobku radośnie, bezpiecznie oraz z uśmiechem na twarzy przekraczało próg naszej placówki.</p>
       </div>
       <div class="about__facility box column">
         <div class="icon b-pink">
           <i class="flaticon-runer-silhouette-running-fast"></i>
         </div>
-        <h2>Aktywności</h2>
+        <h3>Aktywności</h3>
         <p>Wspieramy indywidualny rozwój wszystkich dzieci. Nasz plan tygodniowy jest wypełniony zajęciami tematycznymi, a nasz żłobek często odwiedzają ciekawi goście zajmujący się cie dziedzinami życia.</p>
       </div>
     </div>

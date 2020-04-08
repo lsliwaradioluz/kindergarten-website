@@ -1,7 +1,7 @@
 <template>
   <div class="internship main centered">
     <div class="internship__content column">
-      <h1 class="header-centered">Studiujesz i chcesz odbyć praktyki?</h1>
+      <h2 class="header-centered">Studiujesz i chcesz odbyć praktyki?</h2>
       <p>W Akuku pomożemy Ci zdobyć Twoje pierwsze zawodowe doświadczenie. Jeśli chcesz rozpocząć pracę w charakterze opiekuna, masz odpowiednie kwalifikacje, chęć do nauki oraz dobre podejście do dzieci - zapewnimy Ci odpowiedni start!</p>
       <button class="button b-yellow" @click="scroll" ref="button">Aplikuj</button>
     </div>
@@ -47,12 +47,12 @@
     transform: rotate(180deg);
   }
 
-  .internship h1 {
+  .internship h2 {
     color: white;
     margin: 0;
   }
 
-  .internship h1::after {
+  .internship h2::after {
     display: none;
   }
 

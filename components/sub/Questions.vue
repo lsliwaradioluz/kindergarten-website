@@ -2,10 +2,10 @@
   <div class="questions main column">
     <div class="question box column" v-for="(question, index) in questions" :key="question.id">
       <div class="question__number">
-        <h1 class="header-primary">{{ index + 1 | addZero }}</h1>
+        <h2 class="header-primary">{{ index + 1 | addZero }}</h2>
       </div>
       <div class="question__content">
-        <h2 class="question__content-header header-secondary">{{ question.question }}</h2>
+        <h3 class="question__content-header header-secondary">{{ question.question }}</h3>
         <p class="question__content-text text">{{ question.answer }}</p>
       </div>
     </div>
@@ -36,12 +36,16 @@ export default {
     margin-bottom: 1rem;
   }
 
-  .question__number h1 {
+  .question__number h2 {
     margin: 0;
   }
   
-  .question__number h1::after {
+  .question__number h2::after {
     display: none;
+  }
+
+  .question__content-header {
+    text-align: center;
   }
 
   .question__content-text {

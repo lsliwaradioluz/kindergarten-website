@@ -38,6 +38,7 @@
 
   .landing__content h1 {
     color: white;
+    font-size: 3rem;
     margin-bottom: 1rem;
     margin-top: 0;
   }
@@ -88,11 +89,10 @@
   }
 
   @media (min-width: 1024px) {
-
-    .landing__content h1 {
-      font-size: 3.5rem;
-      line-height: 3rem;
-    }
+     
+     .landing h1 {
+       font-size: 4rem;
+     }
 
     .landing__content {
       width: 50%;

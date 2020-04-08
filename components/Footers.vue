@@ -7,7 +7,7 @@
       <p>Głównym celem naszej pracy jest dobro każdego maluszka, jego harmonijny i wszechstronny rozwój. Chcemy aby z nami czuło się szczęśliwe i bezpieczne.</p>
     </div>
     <div class="footer">
-      <h2>Przydatne linki</h2>
+      <h3>Przydatne linki</h3>
       <nuxt-link to="/" tag="a">Strona Główna</nuxt-link>
       <nuxt-link to="/catering" tag="a">Catering</nuxt-link>
       <nuxt-link to="/teachers" tag="a">Wychowawcy</nuxt-link>
@@ -15,13 +15,13 @@
       <nuxt-link to="/contact" tag="a">Kontakt</nuxt-link>
     </div>
     <div class="footer">
-      <h2>Dokumenty</h2>
+      <h3>Dokumenty</h3>
       <a v-for="document in documents" :key="document.id" :href="document.file.url">{{ document.name }}</a>
     </div>
     <div class="footer">
-      <h2>Skontaktuj się z nami</h2>
+      <h3>Skontaktuj się z nami</h3>
       <div v-for="footer in footers" :key="footer.id">
-        <h2 class="footer__subheader">{{ footer.name }}</h2>
+        <h3 class="footer__subheader">{{ footer.name }}</h3>
         <component 
           :is="footer.name == 'Telefon' ? 'a' : 'p'" 
           v-for="entry in footer.entries" 

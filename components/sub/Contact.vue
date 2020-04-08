@@ -5,7 +5,7 @@
         <div class="icon">
           <i :class="assignIcon(contact.name)"></i>
         </div>
-        <h2>{{ contact.name }}</h2>
+        <h3>{{ contact.name }}</h3>
         <p v-for="entry in contact.entries" :key="entry.id">{{ entry.entry }}</p>
       </div>
     </div>
@@ -56,7 +56,7 @@
     background-color: #05AA19;
   }
 
-  .contact h2 {
+  .contact h3 {
     margin-bottom: 0.5rem;
   }
 

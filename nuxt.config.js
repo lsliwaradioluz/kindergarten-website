@@ -16,7 +16,7 @@ export default {
       { 
         hid: 'description', 
         name: 'description', 
-        content: 'Mieszkasz w zachodniej części Wrocławia i szukasz kompleksowej opieki dla swojego malucha? W naszym żłobku zadbamy o jego harmonijny rozwój! Odwiedź nas i przekonaj się, że wszędzie dobrze, ale w Akuku najlepiej.' }
+        content: 'Mieszkasz w zachodniej części Wrocławia i szukasz opieki dla swojego malucha? W naszym żłobku zadbamy o jego harmonijny rozwój!' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -55,8 +55,14 @@ export default {
     '@nuxtjs/apollo',
     '@nuxtjs/axios',
     '@nuxtjs/markdownit',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots',
   ],
+  robots: {
+    UserAgent: '*',
+    Disallow: '',
+    Sitemap: 'https://www.zlobekakuku.pl/sitemap.xml',
+  },
   apollo: {  
     clientConfigs: {
       default: {

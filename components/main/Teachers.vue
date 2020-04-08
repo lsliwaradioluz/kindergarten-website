@@ -1,13 +1,13 @@
 <template>
   <div class="teachers main" :class="{ 'background-blue': blue }">
-    <h1 class="header-centered" v-if="blue">
+    <h2 class="header-centered" v-if="blue">
       <slot></slot>
-    </h1>
+    </h2>
     <div class="teachers__container box column">
       <div class="teacher" v-for="teacher in filteredTeachers" :key="teacher.id" is="nuxt-link" :to="`/teachers/${teacher.id}`">
         <div class="teacher__image" :style="{ backgroundImage: `url('${teacher.image.url}')` }"></div>
         <div class="teacher__details box">
-          <h2>{{ teacher.name }}</h2>
+          <h3>{{ teacher.name }}</h3>
           <p>{{ teacher.caption }}</p>
         </div>
       </div>
@@ -51,12 +51,12 @@
     z-index: -1;
   }
 
-  .teachers h1 {
+  .teachers h2 {
     margin-top: 4rem;
     color: white;
   }
 
-  .teachers h1::after {
+  .teachers h2::after {
     text-decoration-color: white;
   }
 
@@ -92,7 +92,7 @@
     background-color: rgba(77, 100, 249, 0.158);
   }
 
-  .teacher__details h2 {
+  .teacher__details h3 {
     text-align: center;
   }
 

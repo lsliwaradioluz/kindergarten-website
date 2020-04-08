@@ -5,7 +5,7 @@
     </div>
     <div class="forms__container centered" :class="{ 'green-background': isContact}">
       <form>
-        <h2>Skontaktuj się</h2>
+        <h3>Skontaktuj się</h3>
         <p>Prosimy o podanie swojego adresu e-mail, abyśmy wiedzieli, gdzie mamy przesłać odpowiedź!</p>
         <input placeholder="Twój adres email" v-model="form.from" type="email" required ref="email" :disabled="loading">
         <input placeholder="Temat" v-model="form.subject" type="text" required :disabled="loading">

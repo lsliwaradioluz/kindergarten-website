@@ -1,15 +1,15 @@
 <template>
   <div class="events main">
-    <h1 class="header-centered">
+    <h2 class="header-centered">
       Najbliższe wydarzenia
-    </h1>
+    </h2>
     <div class="events__container">
       <Carousel :columns="[[768, 2], [1024, 3]]">
         <div class="event column" v-for="event in events" :key="event.id">
           <div class="event__image" :style="{ backgroundImage: `url('${event.image.url}')`}">
           </div>
           <div class="event__content box">
-            <h2>{{ event.name }}</h2>
+            <h3>{{ event.name }}</h3>
             <p>
               <i class="flaticon-clock"></i>
               {{ event.date | convertDate }}
@@ -62,11 +62,11 @@
     transform: rotate(180deg);
   }
 
-  .events h1 {
+  .events h2 {
     color: white;
   }
 
-  .events h1::after {
+  .events h2::after {
     text-decoration-color: white;
   }
 
@@ -108,10 +108,6 @@
     left: -0.5rem;
     top: 0;
     border-bottom-left-radius: 15px;
-  }
-
-  .event__content h2 {
-    text-align: left;
   }
 
   .event__content p {

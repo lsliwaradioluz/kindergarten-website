@@ -1,6 +1,6 @@
 <template>
   <div class="gallery main">
-    <h1 class="header-centered" v-if="main">Galeria</h1>
+    <h2 class="header-centered" v-if="main">Galeria</h2>
     <div class="gallery__buttons" v-if="!main">
       <button 
         class="button"
@@ -50,7 +50,7 @@
     padding-bottom: 6rem;
   }
 
-  .gallery h1 {
+  .gallery h2 {
     margin-top: 0;
   }
 
@@ -67,7 +67,7 @@
     border: 0.5px solid rgb(212, 212, 212);
     background-color: transparent;
     font-weight: 500;
-    width: 45%;
+    /* width: 45%; */
     margin: 0.5rem;
   }
 

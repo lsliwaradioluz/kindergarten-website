@@ -1,13 +1,13 @@
 <template>
   <div class="schedules main">
-    <h1 class="header-centered">Plan tygodnia</h1>
+    <h2 class="header-centered">Plan tygodnia</h2>
     <div class="schedules__container">
       <Carousel
         :active="active"
         :columns="[[768, 2], [1024, 4], [1440, 4]]">
-        <div class="schedule" v-for="schedule in schedules" :key="schedule.id">
+        <div class="schedule centered" v-for="schedule in schedules" :key="schedule.id">
           <div class="schedule__content box column">
-            <h2>{{ schedule.day }}</h2>
+            <h3>{{ schedule.day }}</h3>
             <p>{{ schedule.description }}</p>
           </div>
         </div>
@@ -40,7 +40,7 @@
     max-width: 256px;
   }
 
-  .schedule h2 {
+  .schedule h3 {
     margin-bottom: 1rem;
   }
 
