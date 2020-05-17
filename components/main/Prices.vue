@@ -10,7 +10,7 @@
       <p v-for="entry in price.entries" :key="entry.id">{{ entry.entry }}</p>
       <nuxt-link 
         class="button" 
-        :to="{ name: 'contact', params: { focusForm: true } }" 
+        :to="{ name: 'kontakt', params: { focusForm: true } }" 
         @click.native="$root.$emit('sendMessage')">Zapisz się</nuxt-link>
     </div>
     </div>

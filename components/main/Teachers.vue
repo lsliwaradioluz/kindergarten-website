@@ -4,7 +4,7 @@
       <slot></slot>
     </h2>
     <div class="teachers__container box column">
-      <div class="teacher" v-for="teacher in filteredTeachers" :key="teacher.id" is="nuxt-link" :to="`/teachers/${teacher.id}`">
+      <div class="teacher" v-for="teacher in filteredTeachers" :key="teacher.id" is="nuxt-link" :to="`/wychowawcy/${teacher.id}`">
         <div class="teacher__image" :style="{ backgroundImage: `url('${teacher.image.url}')` }"></div>
         <div class="teacher__details box">
           <h3>{{ teacher.name }}</h3>

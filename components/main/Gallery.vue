@@ -17,7 +17,7 @@
           v-for="image in galleries[current].image" 
           :key="image.id" 
           :style="{ backgroundImage: `url('${image.url}')`}"></div>
-        <nuxt-link tag="div" to="/gallery" class="gallery__image last" v-if="main"></nuxt-link>
+        <nuxt-link tag="div" to="/galeria" class="gallery__image last" v-if="main"></nuxt-link>
       </div>
     </transition>
   </div>
