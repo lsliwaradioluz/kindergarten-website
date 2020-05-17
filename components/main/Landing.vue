@@ -1,7 +1,7 @@
 <template>
   <div class="landing main">
     <div class="landing__content">
-      <h1>W Akuku dobro maluszka jest na pierwszym miejscu</h1>
+      <h1>Żłobek Akuku stawia maluszka na pierwszym miejscu</h1>
       <p>Misją naszego żłobka jest dbanie o harmonijmy rozwój dzieci. Chcemy, by z nami czuły się szczęsliwe i bezpieczne!</p>
       <div class="landing__content__buttons">
         <a class="button b-yellow" href="tel:576139837">Zadzwoń</a>
