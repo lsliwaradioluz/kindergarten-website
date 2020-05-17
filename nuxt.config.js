@@ -14,10 +14,9 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { 
-        hid: 'description', 
         name: 'description', 
         content: 'Mieszkasz w zachodniej części Wrocławia i szukasz opieki dla swojego malucha? W naszym żłobku zadbamy o jego harmonijny rozwój!' 
-      }
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }

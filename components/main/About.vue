@@ -14,7 +14,7 @@
           <i class="flaticon-teacher"></i>
         </div>
         <h3>Wychowawcy</h3>
-        <p>W żłobku „A Kuku” nie pracują „panie”, „wychowawczynie” czy „nauczycielki”. Tutaj Waszym dzieckiem opiekują się po prostu ciocie. Chcemy, aby dzieci czuły się w naszym żłobku radośnie, bezpiecznie oraz z uśmiechem na twarzy przekraczało próg naszej placówki.</p>
+        <p>W żłobku „A Kuku” nie pracują „panie”, „wychowawczynie” czy „nauczycielki”. Tutaj Waszym dzieckiem opiekują się po prostu ciocie. W Akuku dobro maluszka jest na pierwszym miejscu i chcemy, aby czuł się radośnie, bezpiecznie oraz z uśmiechem na twarzy przekraczało próg naszej placówki.</p>
       </div>
       <div class="about__facility box column">
         <div class="icon b-pink">

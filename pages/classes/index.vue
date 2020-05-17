@@ -9,7 +9,6 @@
 <script>
   import Schedules from '~/components/main/Schedules.vue'
   import Countdown from '~/components/main/Countdown.vue'
-
   import classesQuery from '~/apollo/queries/classes/classesQuery.gql'
 
   export default {
