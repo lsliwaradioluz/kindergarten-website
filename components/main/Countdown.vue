@@ -4,8 +4,8 @@
     <div class="countdowns__container column">
       <div class="countdown" v-for="(time, key) in timeLeft" :key="key">
         <div class="countdown__content column">
-          <h2 class="countdown__content__header">{{ time }}</h2>
-          <span class="countdown__content__subheader">{{ key | englishToPolish }}</span>
+          <p class="countdown__content__header">{{ time }}</p>
+          <p class="countdown__content__subheader">{{ key | englishToPolish }}</p>
         </div>
       </div>
     </div>
@@ -137,16 +137,16 @@
   .countdown__content__header {
     color: white;
     margin: 0 0 0.5rem 0;
-  }
-
-  .countdown__content__header::after {
-    display: none;
+    font-size: 2rem;
+    line-height: 1;
+    font-family: 'Baloo', cursive;
   }
 
   .countdown__content__subheader {
     color: white;
     font-weight: 700;
     font-size: 0.9rem;
+    margin: 0;
   }
 
   .countdown:nth-child(1) {
