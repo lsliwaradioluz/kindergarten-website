@@ -8,13 +8,13 @@
     </div>
     <transition name="slide">
       <div class="navigation__links main" @click="showNav($event)" ref="navigation">
-        <nuxt-link to="/classes" class="navigation__link">Zajęcia</nuxt-link>
+        <nuxt-link to="/plan-dnia" class="navigation__link">Plan dnia</nuxt-link>
         <nuxt-link to="/catering" class="navigation__link">Catering</nuxt-link>
-        <nuxt-link to="/teachers" class="navigation__link">Wychowawcy</nuxt-link>
-        <nuxt-link to="/prices" class="navigation__link">Cennik</nuxt-link>
-        <nuxt-link to="/gallery" class="navigation__link">Galeria</nuxt-link>
-        <nuxt-link to="/questions" class="navigation__link">Pytania</nuxt-link>
-        <nuxt-link to="/contact" class="navigation__link">Kontakt
+        <nuxt-link to="/wychowawcy" class="navigation__link">Wychowawcy</nuxt-link>
+        <nuxt-link to="/cennik" class="navigation__link">Cennik</nuxt-link>
+        <nuxt-link to="/galeria" class="navigation__link">Galeria</nuxt-link>
+        <nuxt-link to="/pytania" class="navigation__link">Pytania</nuxt-link>
+        <nuxt-link to="/kontakt" class="navigation__link">Kontakt
         </nuxt-link>
       </div>
     </transition>
