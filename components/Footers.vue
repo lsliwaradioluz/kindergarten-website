@@ -4,7 +4,7 @@
       <div class="logo">
         <span class="c-green">aku</span><span class="c-pink">ku</span>
       </div>
-      <p>Akuku to nowy, niepubliczny żłobek we Wrocławiu. Na pierwszym miejscu stawiamy dobro każdego maluszka, jego harmonijny i wszechstronny rozwój. Chcemy aby z nami czuło się szczęśliwe i bezpieczne.</p>
+      <p>Akuku to nowy, niepubliczny żłobek we Wrocławiu. Dla nas maluszek jest najważniejszy - jego dobro, harmonijny i wszechstronny rozwój. Chcemy aby z nami czuł się szczęśliwy i bezpieczny.</p>
     </div>
     <div class="footer">
       <h3>Przydatne linki</h3>
